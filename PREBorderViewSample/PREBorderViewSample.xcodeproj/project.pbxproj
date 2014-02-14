@@ -21,6 +21,7 @@
 		3DC8847E18AE790F006D695E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC8846018AE790F006D695E /* UIKit.framework */; };
 		3DC8848618AE790F006D695E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8848418AE790F006D695E /* InfoPlist.strings */; };
 		3DC8848818AE790F006D695E /* PREBorderViewSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8848718AE790F006D695E /* PREBorderViewSampleTests.m */; };
+		3DC8849318AE7F3F006D695E /* UIView+PREBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8849218AE7F3F006D695E /* UIView+PREBorderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3DC8848318AE790F006D695E /* PREBorderViewSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PREBorderViewSampleTests-Info.plist"; sourceTree = "<group>"; };
 		3DC8848518AE790F006D695E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DC8848718AE790F006D695E /* PREBorderViewSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PREBorderViewSampleTests.m; sourceTree = "<group>"; };
+		3DC8849118AE7F3F006D695E /* UIView+PREBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+PREBorderView.h"; path = "../UIView+PREBorderView.h"; sourceTree = "<group>"; };
+		3DC8849218AE7F3F006D695E /* UIView+PREBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+PREBorderView.m"; path = "../UIView+PREBorderView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		3DC8845018AE790F006D695E = {
 			isa = PBXGroup;
 			children = (
+				3DC8849118AE7F3F006D695E /* UIView+PREBorderView.h */,
+				3DC8849218AE7F3F006D695E /* UIView+PREBorderView.m */,
 				3DC8846218AE790F006D695E /* PREBorderViewSample */,
 				3DC8848118AE790F006D695E /* PREBorderViewSampleTests */,
 				3DC8845B18AE790F006D695E /* Frameworks */,
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC8846D18AE790F006D695E /* PREAppDelegate.m in Sources */,
+				3DC8849318AE7F3F006D695E /* UIView+PREBorderView.m in Sources */,
 				3DC8847318AE790F006D695E /* PREViewController.m in Sources */,
 				3DC8846918AE790F006D695E /* main.m in Sources */,
 			);

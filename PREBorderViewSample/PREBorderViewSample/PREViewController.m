@@ -8,7 +8,16 @@
 
 #import "PREViewController.h"
 
-@interface PREViewController ()
+@interface PREViewController () {
+    IBOutlet UIView* sample1;
+    IBOutlet UIView* sample2;
+    IBOutlet UIView* sample3;
+    IBOutlet UIView* sample4;
+    IBOutlet UIView* sample5;
+    IBOutlet UIView* sample6;
+    IBOutlet UIView* sample7;
+    IBOutlet UIView* sample8;
+}
 
 @end
 
