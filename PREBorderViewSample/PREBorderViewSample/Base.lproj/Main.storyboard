@@ -59,6 +59,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="sample1" destination="P98-DJ-Ows" id="iPU-KC-NQb"/>
+                        <outlet property="sample2" destination="RhJ-pi-Bep" id="c5C-di-ptq"/>
+                        <outlet property="sample3" destination="xhB-FG-VvC" id="0C4-sd-Tbg"/>
+                        <outlet property="sample4" destination="2vc-41-2hN" id="pQp-57-35K"/>
+                        <outlet property="sample5" destination="QzK-bR-PGG" id="ulw-8A-xNj"/>
+                        <outlet property="sample6" destination="q50-uH-hYn" id="8Jc-Lu-L11"/>
+                        <outlet property="sample7" destination="z02-Ce-jMc" id="0Az-TF-dj7"/>
+                        <outlet property="sample8" destination="xlH-Hs-Gj7" id="BsY-oL-0ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

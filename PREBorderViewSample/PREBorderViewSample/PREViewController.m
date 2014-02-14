@@ -7,6 +7,7 @@
 //
 
 #import "PREViewController.h"
+#import "UIView+PREBorderView.h"
 
 @interface PREViewController () {
     IBOutlet UIView* sample1;
@@ -27,6 +28,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [sample1 addOneRetinaPixelBorder];
+    [sample2 addOneRetinaPixelBorderWithColor:[UIColor purpleColor]];
+    [sample3 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionTop];
+    [sample4 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionBottom];
+    [sample5 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionLeft];
+    [sample6 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionRight];
+    
+    [sample7 addOneRetinaPixelLineWithColor:[UIColor redColor] atPosistion:PREBorderPositionTop];
+    [sample7 addOneRetinaPixelLineWithColor:[UIColor greenColor] atPosistion:PREBorderPositionBottom];
+    
+    [sample8 addOneRetinaPixelLineWithColor:[UIColor purpleColor] atPosistion:PREBorderPositionLeft];
+    [sample8 addOneRetinaPixelLineWithColor:[UIColor purpleColor] atPosistion:PREBorderPositionRight];
 }
 
 - (void)didReceiveMemoryWarning
