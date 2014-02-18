@@ -30,17 +30,19 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [sample1 addOneRetinaPixelBorder];
-    [sample2 addOneRetinaPixelBorderWithColor:[UIColor purpleColor]];
-    [sample3 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionTop];
-    [sample4 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionBottom];
-    [sample5 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionLeft];
-    [sample6 addOneRetinaPixelLineWithColor:[UIColor blackColor] atPosistion:PREBorderPositionRight];
+    [sample2 addOneRetinaPixelBorderWithColor:[UIColor grayColor]];
+    [sample3 addLineWithColor:[UIColor blackColor] andWidth:2 atPosistion:PREBorderPositionTop];
+    [sample4 addLineWithColor:[UIColor blackColor] andWidth:2 atPosistion:PREBorderPositionBottom];
+    [sample5 addLineWithColor:[UIColor blackColor] andWidth:2 atPosistion:PREBorderPositionLeft];
+    [sample6 addLineWithColor:[UIColor blackColor] andWidth:2 atPosistion:PREBorderPositionRight];
     
-    [sample7 addOneRetinaPixelLineWithColor:[UIColor redColor] atPosistion:PREBorderPositionTop];
-    [sample7 addOneRetinaPixelLineWithColor:[UIColor greenColor] atPosistion:PREBorderPositionBottom];
+    [sample7 addLineWithColor:[UIColor redColor] andWidth:5 atPosistion:PREBorderPositionTop];
+    [sample7 addLineWithColor:[UIColor greenColor] andWidth:10 atPosistion:PREBorderPositionBottom];
     
-    [sample8 addOneRetinaPixelLineWithColor:[UIColor purpleColor] atPosistion:PREBorderPositionLeft];
-    [sample8 addOneRetinaPixelLineWithColor:[UIColor purpleColor] atPosistion:PREBorderPositionRight];
+    [sample8 addLineWithColor:[UIColor purpleColor] andWidth:5 atPosistion:PREBorderPositionTop];
+    [sample8 addLineWithColor:[UIColor magentaColor] andWidth:5 atPosistion:PREBorderPositionLeft];
+    [sample8 addLineWithColor:[UIColor magentaColor] andWidth:2 atPosistion:PREBorderPositionBottom];
+    [sample8 addLineWithColor:[UIColor purpleColor] andWidth:2 atPosistion:PREBorderPositionRight];
 }
 
 - (void)didReceiveMemoryWarning

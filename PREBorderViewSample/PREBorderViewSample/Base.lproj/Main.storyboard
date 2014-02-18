@@ -17,22 +17,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P98-DJ-Ows">
-                                <rect key="frame" x="20" y="20" width="130" height="130"/>
+                                <rect key="frame" x="20" y="131" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-pi-Bep">
-                                <rect key="frame" x="170" y="20" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-FG-VvC">
-                                <rect key="frame" x="20" y="162" width="130" height="100"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-41-2hN">
-                                <rect key="frame" x="170" y="162" width="130" height="100"/>
+                                <rect key="frame" x="170" y="131" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -47,12 +37,22 @@
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QzK-bR-PGG">
-                                <rect key="frame" x="20" y="275" width="130" height="130"/>
+                                <rect key="frame" x="20" y="274" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q50-uH-hYn">
-                                <rect key="frame" x="170" y="275" width="130" height="130"/>
+                                <rect key="frame" x="170" y="274" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-FG-VvC">
+                                <rect key="frame" x="20" y="20" width="130" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-41-2hN">
+                                <rect key="frame" x="170" y="20" width="130" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -60,10 +60,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="sample1" destination="P98-DJ-Ows" id="iPU-KC-NQb"/>
-                        <outlet property="sample2" destination="RhJ-pi-Bep" id="c5C-di-ptq"/>
-                        <outlet property="sample3" destination="xhB-FG-VvC" id="0C4-sd-Tbg"/>
-                        <outlet property="sample4" destination="2vc-41-2hN" id="pQp-57-35K"/>
+                        <outlet property="sample1" destination="xhB-FG-VvC" id="mqj-yy-iWF"/>
+                        <outlet property="sample2" destination="2vc-41-2hN" id="IJO-hq-I8E"/>
+                        <outlet property="sample3" destination="P98-DJ-Ows" id="2hJ-Ri-dlv"/>
+                        <outlet property="sample4" destination="RhJ-pi-Bep" id="L5U-vo-VmG"/>
                         <outlet property="sample5" destination="QzK-bR-PGG" id="ulw-8A-xNj"/>
                         <outlet property="sample6" destination="q50-uH-hYn" id="8Jc-Lu-L11"/>
                         <outlet property="sample7" destination="z02-Ce-jMc" id="0Az-TF-dj7"/>

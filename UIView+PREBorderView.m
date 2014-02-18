@@ -10,9 +10,27 @@
 
 @implementation UIView (PREBorderView)
 
+static UIColor* _defaultBorderColor;
+
+- (void)setDefaultBorderColor:(UIColor *)defaultBorderColor {
+    _defaultBorderColor = defaultBorderColor;
+}
+
+- (UIColor *)defaultBorderColor {
+    if (!_defaultBorderColor) {
+        if ([self respondsToSelector:@selector(tintColor)]) {
+            return self.tintColor;
+        } else {
+            return [UIColor blueColor];
+        }
+    } else {
+        return _defaultBorderColor;
+    }
+}
+
 - (void)addOneRetinaPixelBorder {
     self.layer.borderWidth = 0.5;
-    self.layer.borderColor = [UIColor colorWithWhite:0.1 alpha:0.3].CGColor;
+    self.layer.borderColor = self.defaultBorderColor.CGColor;
 }
 
 - (void)addOneRetinaPixelBorderWithColor:(UIColor*)color {
@@ -21,27 +39,39 @@
 }
 
 - (void)addOneRetinaPixelLineAtPosistion:(enum PREBorderPosition)position {
-    [self addOneRetinaPixelLineWithColor:[UIColor colorWithWhite:0.1 alpha:0.3] atPosistion:position];
+    [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosistion:position];
 }
 
 - (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosistion:(enum PREBorderPosition)position {
-    CALayer *border = [CALayer layer];
+    [self addLineWithColor:color andWidth:0.5 atPosistion:position];
+}
+
+- (void)addLineWithWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
+    [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosistion:position];
+}
+
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
     
+    if (!([UIScreen mainScreen].scale == 2) && pixelWidth<1) {
+        pixelWidth = 1;
+    }
+    
+    CALayer *border = [CALayer layer];
     switch (position) {
         case PREBorderPositionTop:
-            border.frame = CGRectMake(0, 0, self.frame.size.width, 0.5);
+            border.frame = CGRectMake(0, 0, self.frame.size.width, pixelWidth);
             break;
             
         case PREBorderPositionBottom:
-            border.frame = CGRectMake(0, self.frame.size.height-0.5, self.frame.size.width, 0.5);
+            border.frame = CGRectMake(0, self.frame.size.height-pixelWidth, self.frame.size.width, pixelWidth);
             break;
             
         case PREBorderPositionLeft:
-            border.frame = CGRectMake(0, 0, 0.5, self.frame.size.height);
+            border.frame = CGRectMake(0, 0, pixelWidth, self.frame.size.height);
             break;
             
         case PREBorderPositionRight:
-            border.frame = CGRectMake(self.frame.size.width-0.5, 0, 0.5, self.frame.size.height);
+            border.frame = CGRectMake(self.frame.size.width-pixelWidth, 0, pixelWidth, self.frame.size.height);
             break;
     }
     

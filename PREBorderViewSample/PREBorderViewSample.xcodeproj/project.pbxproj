@@ -388,6 +388,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PREBorderViewSample/PREBorderViewSample-Prefix.pch";
 				INFOPLIST_FILE = "PREBorderViewSample/PREBorderViewSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PREBorderViewSample/PREBorderViewSample-Prefix.pch";
 				INFOPLIST_FILE = "PREBorderViewSample/PREBorderViewSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,6 +469,7 @@
 				3DC8848D18AE790F006D695E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DC8848E18AE790F006D695E /* Build configuration list for PBXNativeTarget "PREBorderViewSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +478,7 @@
 				3DC8849018AE790F006D695E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

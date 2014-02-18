@@ -17,9 +17,15 @@ enum PREBorderPosition {
 
 @interface UIView (PREBorderView)
 
+@property (nonatomic,retain) UIColor* defaultBorderColor;
+
 - (void)addOneRetinaPixelBorder;
 - (void)addOneRetinaPixelBorderWithColor:(UIColor*)color;
+
 - (void)addOneRetinaPixelLineAtPosistion:(enum PREBorderPosition)position;
 - (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosistion:(enum PREBorderPosition)position;
+
+- (void)addLineWithWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position;
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position;
 
 @end
