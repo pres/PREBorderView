@@ -38,19 +38,19 @@ static UIColor* _defaultBorderColor;
     self.layer.borderColor = color.CGColor;
 }
 
-- (void)addOneRetinaPixelLineAtPosistion:(enum PREBorderPosition)position {
-    [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosistion:position];
+- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
+    [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosition:position];
 }
 
-- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosistion:(enum PREBorderPosition)position {
-    [self addLineWithColor:color andWidth:0.5 atPosistion:position];
+- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
+    [self addLineWithColor:color andWidth:0.5 atPosition:position];
 }
 
-- (void)addLineWithWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
-    [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosistion:position];
+- (void)addLineWithWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position {
+    [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosition:position];
 }
 
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position {
     
     if (!([UIScreen mainScreen].scale == 2) && pixelWidth<1) {
         pixelWidth = 1;
