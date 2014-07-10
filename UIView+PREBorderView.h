@@ -28,4 +28,7 @@ enum PREBorderPosition {
 - (void)addLineWithWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position;
 - (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position;
 
+- (void)removeBorderAtPosition:(enum PREBorderPosition)position;
+- (void)removeAllBorders;
+
 @end

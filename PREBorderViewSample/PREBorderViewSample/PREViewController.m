@@ -42,7 +42,20 @@
     [sample8 addLineWithColor:[UIColor purpleColor] andWidth:5 atPosition:PREBorderPositionTop];
     [sample8 addLineWithColor:[UIColor magentaColor] andWidth:5 atPosition:PREBorderPositionLeft];
     [sample8 addLineWithColor:[UIColor magentaColor] andWidth:2 atPosition:PREBorderPositionBottom];
-    [sample8 addLineWithColor:[UIColor purpleColor] andWidth:2 atPosition:PREBorderPositionRight];
+
+    [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
+}
+
+- (void)removeLine
+{
+    [sample8 removeBorderAtPosition:PREBorderPositionRight];
+    [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
+}
+
+- (void)addLine
+{
+    [sample8 addLineWithColor:[UIColor orangeColor] andWidth:8 atPosition:PREBorderPositionRight];
+    [self performSelector:@selector(removeLine) withObject:nil afterDelay:0.5];
 }
 
 - (void)didReceiveMemoryWarning
