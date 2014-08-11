@@ -12,7 +12,7 @@ A very simple Objective-C UIView category for specifying single-sided borders.
 Using CocoaPods:
 
 ```ruby
-pod 'PREBorderView', "~> 1.0"
+pod 'PREBorderView', "~> 2.0"
 ```
 
 Otherwise just include `UIView+PREBorderView.{h,m}` in your project.
