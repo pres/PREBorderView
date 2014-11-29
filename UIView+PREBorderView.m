@@ -33,11 +33,13 @@ static UIColor* _defaultBorderColor;
 #pragma mark - complete border
 
 - (void)addOneRetinaPixelBorder {
-    [self addBorderWithColor:self.defaultBorderColor andWidth:0.5];
+    [self addOneRetinaPixelBorderWithColor:self.defaultBorderColor];
 }
 
 - (void)addOneRetinaPixelBorderWithColor:(UIColor*)color {
-    [self addBorderWithColor:color andWidth:0.5];
+    
+    double retinaPixelSize = 1./[UIScreen mainScreen].scale;
+    [self addBorderWithColor:color andWidth:retinaPixelSize];
 }
 
 - (void)addBorderWithColor:(UIColor *)color andWidth:(float)lineWidth {
@@ -52,7 +54,9 @@ static UIColor* _defaultBorderColor;
 }
 
 - (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
-    [self addLineWithColor:color andWidth:0.5 atPosition:position];
+    
+    double retinaPixelSize = 1./[UIScreen mainScreen].scale;
+    [self addLineWithColor:color andWidth:retinaPixelSize atPosition:position];
 }
 
 - (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
@@ -60,10 +64,11 @@ static UIColor* _defaultBorderColor;
 }
 
 - (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
-
-    if (!([UIScreen mainScreen].scale == 2) && lineWidth<1) {
-        lineWidth = 1;
-    }
+    
+    // min lineweight is one logical device pixel
+    double retinaPixelSize = 1./[UIScreen mainScreen].scale;
+    lineWidth = MAX(retinaPixelSize, lineWidth);
+    NSLog(@"%f", lineWidth);
 
     CALayer *border = [CALayer layer];
     switch (position) {
