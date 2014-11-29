@@ -21,12 +21,13 @@ enum PREBorderPosition {
 
 - (void)addOneRetinaPixelBorder;
 - (void)addOneRetinaPixelBorderWithColor:(UIColor*)color;
+- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth;
 
 - (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position;
 - (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position;
 
-- (void)addLineWithWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position;
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position;
+- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
 
 - (void)removeBorderAtPosition:(enum PREBorderPosition)position;
 - (void)removeAllBorders;

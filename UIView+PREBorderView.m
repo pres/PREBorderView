@@ -10,6 +10,8 @@
 
 @implementation UIView (PREBorderView)
 
+#pragma mark - default border
+
 static UIColor* _defaultBorderColor;
 
 - (void)setDefaultBorderColor:(UIColor *)defaultBorderColor {
@@ -28,15 +30,22 @@ static UIColor* _defaultBorderColor;
     }
 }
 
+#pragma mark - complete border
+
 - (void)addOneRetinaPixelBorder {
-    self.layer.borderWidth = 0.5;
-    self.layer.borderColor = self.defaultBorderColor.CGColor;
+    [self addBorderWithColor:self.defaultBorderColor andWidth:0.5];
 }
 
 - (void)addOneRetinaPixelBorderWithColor:(UIColor*)color {
-    self.layer.borderWidth = 0.5;
+    [self addBorderWithColor:color andWidth:0.5];
+}
+
+- (void)addBorderWithColor:(UIColor *)color andWidth:(float)lineWidth {
+    self.layer.borderWidth = lineWidth;
     self.layer.borderColor = color.CGColor;
 }
+
+#pragma mark - single side border
 
 - (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
     [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosition:position];
@@ -46,32 +55,32 @@ static UIColor* _defaultBorderColor;
     [self addLineWithColor:color andWidth:0.5 atPosition:position];
 }
 
-- (void)addLineWithWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position {
-    [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosition:position];
+- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+    [self addLineWithColor:self.defaultBorderColor andWidth:lineWidth atPosition:position];
 }
 
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosition:(enum PREBorderPosition)position {
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
 
-    if (!([UIScreen mainScreen].scale == 2) && pixelWidth<1) {
-        pixelWidth = 1;
+    if (!([UIScreen mainScreen].scale == 2) && lineWidth<1) {
+        lineWidth = 1;
     }
 
     CALayer *border = [CALayer layer];
     switch (position) {
         case PREBorderPositionTop:
-            border.frame = CGRectMake(0, 0, self.frame.size.width, pixelWidth);
+            border.frame = CGRectMake(0, 0, self.frame.size.width, lineWidth);
             break;
 
         case PREBorderPositionBottom:
-            border.frame = CGRectMake(0, self.frame.size.height-pixelWidth, self.frame.size.width, pixelWidth);
+            border.frame = CGRectMake(0, self.frame.size.height-lineWidth, self.frame.size.width, lineWidth);
             break;
 
         case PREBorderPositionLeft:
-            border.frame = CGRectMake(0, 0, pixelWidth, self.frame.size.height);
+            border.frame = CGRectMake(0, 0, lineWidth, self.frame.size.height);
             break;
 
         case PREBorderPositionRight:
-            border.frame = CGRectMake(self.frame.size.width-pixelWidth, 0, pixelWidth, self.frame.size.height);
+            border.frame = CGRectMake(self.frame.size.width-lineWidth, 0, lineWidth, self.frame.size.height);
             break;
     }
 
@@ -82,8 +91,10 @@ static UIColor* _defaultBorderColor;
     [self.layer addSublayer:border];
 }
 
-- (int)tagForPosition:(enum PREBorderPosition)position
-{
+#pragma mark -
+
+- (int)tagForPosition:(enum PREBorderPosition)position {
+    
     int tag = 32147582;
 
     switch (position) {
@@ -97,8 +108,8 @@ static UIColor* _defaultBorderColor;
     return 0;
 }
 
-- (void)removeBorderAtPosition:(enum PREBorderPosition)position
-{
+- (void)removeBorderAtPosition:(enum PREBorderPosition)position {
+
     int tag = [self tagForPosition:position];
 
     __block CALayer *toRemove;
@@ -113,8 +124,8 @@ static UIColor* _defaultBorderColor;
     [toRemove removeFromSuperlayer];
 }
 
-- (void)removeAllBorders
-{
+- (void)removeAllBorders {
+    
     [self removeBorderAtPosition:PREBorderPositionTop];
     [self removeBorderAtPosition:PREBorderPositionBottom];
     [self removeBorderAtPosition:PREBorderPositionLeft];
