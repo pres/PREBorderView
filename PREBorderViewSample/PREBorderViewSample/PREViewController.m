@@ -24,10 +24,9 @@
 
 @implementation PREViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     [sample1 addOneRetinaPixelBorder];
     [sample2 addOneRetinaPixelBorderWithColor:[UIColor grayColor]];
@@ -46,22 +45,23 @@
     [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
 }
 
-- (void)removeLine
-{
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
+
+- (void)removeLine {
+    
     [sample8 removeBorderAtPosition:PREBorderPositionRight];
     [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
 }
 
-- (void)addLine
-{
+- (void)addLine {
+    
     [sample8 addLineWithColor:[UIColor orangeColor] andWidth:8 atPosition:PREBorderPositionRight];
     [self performSelector:@selector(removeLine) withObject:nil afterDelay:0.5];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
