@@ -68,7 +68,6 @@ static UIColor* _defaultBorderColor;
     // min lineweight is one logical device pixel
     double retinaPixelSize = 1./[UIScreen mainScreen].scale;
     lineWidth = MAX(retinaPixelSize, lineWidth);
-    NSLog(@"%f", lineWidth);
 
     CALayer *border = [CALayer layer];
     switch (position) {
