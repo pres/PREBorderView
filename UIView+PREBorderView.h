@@ -33,19 +33,81 @@ enum PREBorderPosition {
 
 @interface UIView (PREBorderView)
 
+/// default color to use for borders that don't specify a color.
 @property (nonatomic,retain) UIColor* defaultBorderColor;
+/// the size of a device pixel
+@property (nonatomic,readonly) CGFloat devicePixelSize;
 
-- (void)addOneRetinaPixelBorder;
-- (void)addOneRetinaPixelBorderWithColor:(UIColor*)color;
+/**
+ *  Add a border to a view with the line width of one retina pixel.
+ */
+- (void)addRetinaPixelBorder;
+
+/**
+ *  Add a border to a view with the line width of one retina pixel with the specified color.
+ *
+ *  @param color color of the line
+ */
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color;
+
+/**
+ *  Add a border to a view with the specified line width and the specified color.
+ *
+ *  @param color color of the line
+ *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
+ */
 - (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth;
 
-- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position;
-- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position;
+/**
+ *  Add a single retina pixel line to the specified side of the view.
+ *
+ *  @param position the side of the view to which the line should be added
+ */
+- (void)addRetinaPixelLineAtPosition:(enum PREBorderPosition)position;
 
+/**
+ *  Add a single retina pixel line to the specified side of the view with the specified color.
+ *
+ *  @param color color of the line
+ *  @param position the side of the view to which the line should be added
+ */
+- (void)addRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position;
+
+/**
+ *  Add a line to the specified side of the view with the specified line width.
+ *
+ *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
+ *  @param position the side of the view to which the line should be added
+ */
 - (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
+
+/**
+ *  Add a line to the specified side of the view with the specified color and the specified line width.
+ *
+ *  @param color color of the line
+ *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
+ *  @param position the side of the view to which the line should be added
+ */
 - (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
 
+/**
+ *  Remove the line at the specified side of the view.
+ *
+ *  @param position the side of the view from which lines should be removed
+ */
 - (void)removeBorderAtPosition:(enum PREBorderPosition)position;
+
+/**
+ *  Remove the lines from all sides of the view.
+ */
 - (void)removeAllBorders;
+
+
+
+
+- (void)addOneRetinaPixelBorder __deprecated_msg("Use addRetinaPixelBorder");
+- (void)addOneRetinaPixelBorderWithColor:(UIColor*)color __deprecated_msg("Use addRetinaPixelBorderWithColor:");
+- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position __deprecated_msg("Use addRetinaPixelLineAtPosition:");
+- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addRetinaPixelLineWithColor:atPosition:");
 
 @end

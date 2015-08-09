@@ -48,11 +48,11 @@ static UIColor* _defaultBorderColor;
 
 #pragma mark - complete border
 
-- (void)addOneRetinaPixelBorder {
-    [self addOneRetinaPixelBorderWithColor:self.defaultBorderColor];
+- (void)addRetinaPixelBorder {
+    [self addRetinaPixelBorderWithColor:self.defaultBorderColor];
 }
 
-- (void)addOneRetinaPixelBorderWithColor:(UIColor*)color {
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color {
     
     double retinaPixelSize = 1./[UIScreen mainScreen].scale;
     [self addBorderWithColor:color andWidth:retinaPixelSize];
@@ -65,14 +65,12 @@ static UIColor* _defaultBorderColor;
 
 #pragma mark - single side border
 
-- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
-    [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosition:position];
+- (void)addRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
+    [self addRetinaPixelLineWithColor:self.defaultBorderColor atPosition:position];
 }
 
-- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
-    
-    double retinaPixelSize = 1./[UIScreen mainScreen].scale;
-    [self addLineWithColor:color andWidth:retinaPixelSize atPosition:position];
+- (void)addRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
+    [self addLineWithColor:color andWidth:self.devicePixelSize atPosition:position];
 }
 
 - (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
@@ -81,9 +79,8 @@ static UIColor* _defaultBorderColor;
 
 - (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
     
-    // min lineweight is one logical device pixel
-    double retinaPixelSize = 1./[UIScreen mainScreen].scale;
-    lineWidth = MAX(retinaPixelSize, lineWidth);
+    // min lineweight is one device pixel
+    lineWidth = MAX(self.devicePixelSize, lineWidth);
 
     CALayer *border = [CALayer layer];
     switch (position) {
@@ -111,22 +108,7 @@ static UIColor* _defaultBorderColor;
     [self.layer addSublayer:border];
 }
 
-#pragma mark -
-
-- (int)tagForPosition:(enum PREBorderPosition)position {
-    
-    int tag = 32147582;
-
-    switch (position) {
-        case PREBorderPositionTop:    return tag;
-        case PREBorderPositionBottom: return tag + 1;
-        case PREBorderPositionLeft:   return tag + 2;
-        case PREBorderPositionRight:  return tag + 3;
-    }
-
-    NSAssert(NO, @"invalid position");
-    return 0;
-}
+#pragma mark - border removal
 
 - (void)removeBorderAtPosition:(enum PREBorderPosition)position {
 
@@ -150,6 +132,45 @@ static UIColor* _defaultBorderColor;
     [self removeBorderAtPosition:PREBorderPositionBottom];
     [self removeBorderAtPosition:PREBorderPositionLeft];
     [self removeBorderAtPosition:PREBorderPositionRight];
+}
+
+#pragma mark -
+
+- (int)tagForPosition:(enum PREBorderPosition)position {
+    
+    int tag = 32147582;
+    
+    switch (position) {
+        case PREBorderPositionTop:    return tag;
+        case PREBorderPositionBottom: return tag + 1;
+        case PREBorderPositionLeft:   return tag + 2;
+        case PREBorderPositionRight:  return tag + 3;
+    }
+    
+    NSAssert(NO, @"invalid position");
+    return 0;
+}
+
+- (CGFloat)devicePixelSize {
+    return 1./[UIScreen mainScreen].scale;
+}
+
+#pragma mark - deprecated
+
+- (void)addOneRetinaPixelBorder {
+    [self addRetinaPixelBorder];
+}
+
+- (void)addOneRetinaPixelBorderWithColor:(UIColor*)color {
+    [self addRetinaPixelBorderWithColor:color];
+}
+
+- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
+    [self addRetinaPixelLineAtPosition:position];
+}
+
+- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
+    [self addRetinaPixelLineWithColor:color atPosition:position];
 }
 
 @end

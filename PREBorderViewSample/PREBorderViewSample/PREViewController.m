@@ -28,8 +28,8 @@
 
     [super viewDidLoad];
     
-    [sample1 addOneRetinaPixelBorder];
-    [sample2 addOneRetinaPixelBorderWithColor:[UIColor grayColor]];
+    [sample1 addRetinaPixelBorder];
+    [sample2 addRetinaPixelBorderWithColor:[UIColor grayColor]];
     [sample3 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
     [sample4 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionBottom];
     [sample5 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionLeft];
