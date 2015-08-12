@@ -63,7 +63,7 @@ enum PREBorderPosition {
  *
  *  @param position the side of the view to which the line should be added
  */
-- (void)addRetinaPixelLineAtPosition:(enum PREBorderPosition)position;
+- (void)addRetinaPixelBorderAtPosition:(enum PREBorderPosition)position;
 
 /**
  *  Add a single retina pixel line to the specified side of the view with the specified color.
@@ -71,7 +71,7 @@ enum PREBorderPosition {
  *  @param color color of the line
  *  @param position the side of the view to which the line should be added
  */
-- (void)addRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position;
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position;
 
 /**
  *  Add a line to the specified side of the view with the specified line width.
@@ -79,7 +79,7 @@ enum PREBorderPosition {
  *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
  *  @param position the side of the view to which the line should be added
  */
-- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
+- (void)addBorderWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
 
 /**
  *  Add a line to the specified side of the view with the specified color and the specified line width.
@@ -88,7 +88,7 @@ enum PREBorderPosition {
  *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
  *  @param position the side of the view to which the line should be added
  */
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
+- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
 
 /**
  *  Remove the line at the specified side of the view.
@@ -109,5 +109,7 @@ enum PREBorderPosition {
 - (void)addOneRetinaPixelBorderWithColor:(UIColor*)color __deprecated_msg("Use addRetinaPixelBorderWithColor:");
 - (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position __deprecated_msg("Use addRetinaPixelLineAtPosition:");
 - (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addRetinaPixelLineWithColor:atPosition:");
+- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addBorderWithWidth:atPosition:");
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addBorderWithColor:andWidth:atPosition");
 
 @end

@@ -65,19 +65,20 @@ static UIColor* _defaultBorderColor;
 
 #pragma mark - single side border
 
-- (void)addRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
-    [self addRetinaPixelLineWithColor:self.defaultBorderColor atPosition:position];
+- (void)addRetinaPixelBorderAtPosition:(enum PREBorderPosition)position {
+    [self addRetinaPixelBorderWithColor:self.defaultBorderColor atPosition:position];
 }
 
-- (void)addRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
-    [self addLineWithColor:color andWidth:self.devicePixelSize atPosition:position];
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
+    [self addBorderWithColor:color andWidth:self.devicePixelSize atPosition:position];
 }
 
-- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
-    [self addLineWithColor:self.defaultBorderColor andWidth:lineWidth atPosition:position];
+
+- (void)addBorderWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+    [self addBorderWithColor:self.defaultBorderColor andWidth:lineWidth atPosition:position];
 }
 
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
     
     // min lineweight is one device pixel
     lineWidth = MAX(self.devicePixelSize, lineWidth);
@@ -166,11 +167,19 @@ static UIColor* _defaultBorderColor;
 }
 
 - (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
-    [self addRetinaPixelLineAtPosition:position];
+    [self addRetinaPixelBorderAtPosition:position];
 }
 
 - (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
-    [self addRetinaPixelLineWithColor:color atPosition:position];
+    [self addRetinaPixelBorderWithColor:color atPosition:position];
+}
+
+- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+    [self addBorderWithWidth:lineWidth atPosition:position];
+};
+
+- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+    [self addBorderWithColor:color andWidth:lineWidth atPosition:position];
 }
 
 @end
