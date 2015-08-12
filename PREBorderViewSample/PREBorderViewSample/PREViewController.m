@@ -30,17 +30,17 @@
     
     [sample1 addRetinaPixelBorder];
     [sample2 addRetinaPixelBorderWithColor:[UIColor grayColor]];
-    [sample3 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
-    [sample4 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionBottom];
-    [sample5 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionLeft];
-    [sample6 addLineWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionRight];
+    [sample3 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
+    [sample4 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionBottom];
+    [sample5 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionLeft];
+    [sample6 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionRight];
     
-    [sample7 addLineWithColor:[UIColor redColor] andWidth:5 atPosition:PREBorderPositionTop];
-    [sample7 addLineWithColor:[UIColor greenColor] andWidth:10 atPosition:PREBorderPositionBottom];
+    [sample7 addBorderWithColor:[UIColor redColor] andWidth:5 atPosition:PREBorderPositionTop];
+    [sample7 addBorderWithColor:[UIColor greenColor] andWidth:10 atPosition:PREBorderPositionBottom];
     
-    [sample8 addLineWithColor:[UIColor purpleColor] andWidth:5 atPosition:PREBorderPositionTop];
-    [sample8 addLineWithColor:[UIColor magentaColor] andWidth:5 atPosition:PREBorderPositionLeft];
-    [sample8 addLineWithColor:[UIColor magentaColor] andWidth:2 atPosition:PREBorderPositionBottom];
+    [sample8 addBorderWithColor:[UIColor purpleColor] andWidth:5 atPosition:PREBorderPositionTop];
+    [sample8 addBorderWithColor:[UIColor magentaColor] andWidth:5 atPosition:PREBorderPositionLeft];
+    [sample8 addBorderWithColor:[UIColor magentaColor] andWidth:2 atPosition:PREBorderPositionBottom];
 
     [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
 }
@@ -60,7 +60,7 @@
 
 - (void)addLine {
     
-    [sample8 addLineWithColor:[UIColor orangeColor] andWidth:8 atPosition:PREBorderPositionRight];
+    [sample8 addBorderWithColor:[UIColor orangeColor] andWidth:8 atPosition:PREBorderPositionRight];
     [self performSelector:@selector(removeLine) withObject:nil afterDelay:0.5];
 }
 
