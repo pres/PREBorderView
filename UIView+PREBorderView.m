@@ -156,30 +156,4 @@ static UIColor* _defaultBorderColor;
     return 1./[UIScreen mainScreen].scale;
 }
 
-#pragma mark - deprecated
-
-- (void)addOneRetinaPixelBorder {
-    [self addRetinaPixelBorder];
-}
-
-- (void)addOneRetinaPixelBorderWithColor:(UIColor*)color {
-    [self addRetinaPixelBorderWithColor:color];
-}
-
-- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position {
-    [self addRetinaPixelBorderAtPosition:position];
-}
-
-- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
-    [self addRetinaPixelBorderWithColor:color atPosition:position];
-}
-
-- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
-    [self addBorderWithWidth:lineWidth atPosition:position];
-};
-
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
-    [self addBorderWithColor:color andWidth:lineWidth atPosition:position];
-}
-
 @end

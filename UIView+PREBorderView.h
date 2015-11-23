@@ -102,14 +102,4 @@ enum PREBorderPosition {
  */
 - (void)removeAllBorders;
 
-
-
-
-- (void)addOneRetinaPixelBorder __deprecated_msg("Use addRetinaPixelBorder");
-- (void)addOneRetinaPixelBorderWithColor:(UIColor*)color __deprecated_msg("Use addRetinaPixelBorderWithColor:");
-- (void)addOneRetinaPixelLineAtPosition:(enum PREBorderPosition)position __deprecated_msg("Use addRetinaPixelLineAtPosition:");
-- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addRetinaPixelLineWithColor:atPosition:");
-- (void)addLineWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addBorderWithWidth:atPosition:");
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position __deprecated_msg("Use addBorderWithColor:andWidth:atPosition");
-
 @end
