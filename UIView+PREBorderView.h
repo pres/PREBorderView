@@ -28,7 +28,11 @@ enum PREBorderPosition {
     PREBorderPositionTop,
     PREBorderPositionBottom,
     PREBorderPositionLeft,
-    PREBorderPositionRight
+    PREBorderPositionRight,
+    PREBorderPositionTopOutside,
+    PREBorderPositionBottomOutside,
+    PREBorderPositionLeftOutside,
+    PREBorderPositionRightOutside
 };
 
 @interface UIView (PREBorderView)

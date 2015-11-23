@@ -100,6 +100,22 @@ static UIColor* _defaultBorderColor;
         case PREBorderPositionRight:
             border.frame = CGRectMake(self.frame.size.width-lineWidth, 0, lineWidth, self.frame.size.height);
             break;
+            
+        case PREBorderPositionTopOutside:
+            border.frame = CGRectMake(0, -lineWidth, self.frame.size.width, lineWidth);
+            break;
+            
+        case PREBorderPositionBottomOutside:
+            border.frame = CGRectMake(0, self.frame.size.height, self.frame.size.width, lineWidth);
+            break;
+            
+        case PREBorderPositionLeftOutside:
+            border.frame = CGRectMake(-lineWidth, 0, lineWidth, self.frame.size.height);
+            break;
+            
+        case PREBorderPositionRightOutside:
+            border.frame = CGRectMake(self.frame.size.width, 0, lineWidth, self.frame.size.height);
+            break;
     }
 
     border.backgroundColor = color.CGColor;
@@ -142,10 +158,15 @@ static UIColor* _defaultBorderColor;
     int tag = 32147582;
     
     switch (position) {
-        case PREBorderPositionTop:    return tag;
-        case PREBorderPositionBottom: return tag + 1;
-        case PREBorderPositionLeft:   return tag + 2;
-        case PREBorderPositionRight:  return tag + 3;
+        case PREBorderPositionTop:              return tag;
+        case PREBorderPositionBottom:           return tag + 1;
+        case PREBorderPositionLeft:             return tag + 2;
+        case PREBorderPositionRight:            return tag + 3;
+            
+        case PREBorderPositionTopOutside:       return tag;
+        case PREBorderPositionBottomOutside:    return tag + 1;
+        case PREBorderPositionLeftOutside:      return tag + 2;
+        case PREBorderPositionRightOutside:     return tag + 3;
     }
     
     NSAssert(NO, @"invalid position");
