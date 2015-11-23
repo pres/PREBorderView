@@ -13,3 +13,4 @@ All notable changes to this project will be documented in this file.
 
 #### Updated
 * Removed methods deprecated in [2.1](https://github.com/pres/PREBorderView/releases/tag/2.1)
+* Switched from `enum` to `NS_ENUM` for `PREBorderPosition`

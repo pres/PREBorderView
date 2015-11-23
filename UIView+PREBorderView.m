@@ -65,59 +65,90 @@ static UIColor* _defaultBorderColor;
 
 #pragma mark - single side border
 
-- (void)addRetinaPixelBorderAtPosition:(enum PREBorderPosition)position {
+- (void)addRetinaPixelBorderAtPosition:(PREBorderPosition)position {
     [self addRetinaPixelBorderWithColor:self.defaultBorderColor atPosition:position];
 }
 
-- (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position {
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(PREBorderPosition)position {
     [self addBorderWithColor:color andWidth:self.devicePixelSize atPosition:position];
 }
 
 
-- (void)addBorderWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+- (void)addBorderWithWidth:(float)lineWidth atPosition:(PREBorderPosition)position {
     [self addBorderWithColor:self.defaultBorderColor andWidth:lineWidth atPosition:position];
 }
 
-- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position {
+- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(PREBorderPosition)position {
     
     // min lineweight is one device pixel
     lineWidth = MAX(self.devicePixelSize, lineWidth);
 
     CALayer *border = [CALayer layer];
+    CGRect frame;
+    
     switch (position) {
         case PREBorderPositionTop:
-            border.frame = CGRectMake(0, 0, self.frame.size.width, lineWidth);
+            frame = CGRectMake(0, 0, self.frame.size.width, lineWidth);
             break;
 
         case PREBorderPositionBottom:
-            border.frame = CGRectMake(0, self.frame.size.height-lineWidth, self.frame.size.width, lineWidth);
+            frame = CGRectMake(0, self.frame.size.height-lineWidth, self.frame.size.width, lineWidth);
             break;
 
         case PREBorderPositionLeft:
-            border.frame = CGRectMake(0, 0, lineWidth, self.frame.size.height);
+            frame = CGRectMake(0, 0, lineWidth, self.frame.size.height);
             break;
 
         case PREBorderPositionRight:
-            border.frame = CGRectMake(self.frame.size.width-lineWidth, 0, lineWidth, self.frame.size.height);
+            frame = CGRectMake(self.frame.size.width-lineWidth, 0, lineWidth, self.frame.size.height);
             break;
             
         case PREBorderPositionTopOutside:
-            border.frame = CGRectMake(0, -lineWidth, self.frame.size.width, lineWidth);
+            frame = CGRectMake(0, -lineWidth, self.frame.size.width, lineWidth);
+            if ([self borderAtPosition:PREBorderPositionLeftOutside]) {
+                frame.origin.x = -[self borderAtPosition:PREBorderPositionLeftOutside].frame.size.width;
+                frame.size.width += [self borderAtPosition:PREBorderPositionLeftOutside].frame.size.width;
+            }
+            if ([self borderAtPosition:PREBorderPositionRightOutside]) {
+                frame.size.width += [self borderAtPosition:PREBorderPositionRightOutside].frame.size.width;
+            }
             break;
             
         case PREBorderPositionBottomOutside:
-            border.frame = CGRectMake(0, self.frame.size.height, self.frame.size.width, lineWidth);
+            frame = CGRectMake(0, self.frame.size.height, self.frame.size.width, lineWidth);
+            if ([self borderAtPosition:PREBorderPositionLeftOutside]) {
+                frame.origin.x = -[self borderAtPosition:PREBorderPositionLeftOutside].frame.size.width;
+                frame.size.width += [self borderAtPosition:PREBorderPositionLeftOutside].frame.size.width;
+            }
+            if ([self borderAtPosition:PREBorderPositionRightOutside]) {
+                frame.size.width += [self borderAtPosition:PREBorderPositionRightOutside].frame.size.width;
+            }
             break;
             
         case PREBorderPositionLeftOutside:
-            border.frame = CGRectMake(-lineWidth, 0, lineWidth, self.frame.size.height);
+            frame = CGRectMake(-lineWidth, 0, lineWidth, self.frame.size.height);
+            if ([self borderAtPosition:PREBorderPositionTopOutside]) {
+                frame.origin.y = -[self borderAtPosition:PREBorderPositionTopOutside].frame.size.height;
+                frame.size.height += [self borderAtPosition:PREBorderPositionTopOutside].frame.size.height;
+            }
+            if ([self borderAtPosition:PREBorderPositionBottomOutside]) {
+                frame.size.height += [self borderAtPosition:PREBorderPositionBottomOutside].frame.size.height;
+            }
             break;
             
         case PREBorderPositionRightOutside:
-            border.frame = CGRectMake(self.frame.size.width, 0, lineWidth, self.frame.size.height);
+            frame = CGRectMake(self.frame.size.width, 0, lineWidth, self.frame.size.height);
+            if ([self borderAtPosition:PREBorderPositionTopOutside]) {
+                frame.origin.y = -[self borderAtPosition:PREBorderPositionTopOutside].frame.size.height;
+                frame.size.height += [self borderAtPosition:PREBorderPositionTopOutside].frame.size.height;
+            }
+            if ([self borderAtPosition:PREBorderPositionBottomOutside]) {
+                frame.size.height += [self borderAtPosition:PREBorderPositionBottomOutside].frame.size.height;
+            }
             break;
     }
 
+    border.frame = frame;
     border.backgroundColor = color.CGColor;
 
     [self removeBorderAtPosition:position];
@@ -125,9 +156,27 @@ static UIColor* _defaultBorderColor;
     [self.layer addSublayer:border];
 }
 
+#pragma mark -
+
+- (CALayer*)borderAtPosition:(PREBorderPosition)position {
+
+    int tag = [self tagForPosition:position];
+    
+    __block CALayer *border;
+    
+    [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer *layer, NSUInteger idx, BOOL *stop) {
+        if ([[layer valueForKey:@"tag"] intValue] == tag) {
+            *stop = YES;
+            border = layer;
+        }
+    }];
+    
+    return border;
+}
+
 #pragma mark - border removal
 
-- (void)removeBorderAtPosition:(enum PREBorderPosition)position {
+- (void)removeBorderAtPosition:(PREBorderPosition)position {
 
     int tag = [self tagForPosition:position];
 
@@ -149,11 +198,16 @@ static UIColor* _defaultBorderColor;
     [self removeBorderAtPosition:PREBorderPositionBottom];
     [self removeBorderAtPosition:PREBorderPositionLeft];
     [self removeBorderAtPosition:PREBorderPositionRight];
+    
+    [self removeBorderAtPosition:PREBorderPositionTopOutside];
+    [self removeBorderAtPosition:PREBorderPositionBottomOutside];
+    [self removeBorderAtPosition:PREBorderPositionLeftOutside];
+    [self removeBorderAtPosition:PREBorderPositionRightOutside];
 }
 
 #pragma mark -
 
-- (int)tagForPosition:(enum PREBorderPosition)position {
+- (int)tagForPosition:(PREBorderPosition)position {
     
     int tag = 32147582;
     
@@ -163,10 +217,10 @@ static UIColor* _defaultBorderColor;
         case PREBorderPositionLeft:             return tag + 2;
         case PREBorderPositionRight:            return tag + 3;
             
-        case PREBorderPositionTopOutside:       return tag;
-        case PREBorderPositionBottomOutside:    return tag + 1;
-        case PREBorderPositionLeftOutside:      return tag + 2;
-        case PREBorderPositionRightOutside:     return tag + 3;
+        case PREBorderPositionTopOutside:       return tag + 4;
+        case PREBorderPositionBottomOutside:    return tag + 5;
+        case PREBorderPositionLeftOutside:      return tag + 6;
+        case PREBorderPositionRightOutside:     return tag + 7;
     }
     
     NSAssert(NO, @"invalid position");

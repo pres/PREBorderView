@@ -24,7 +24,7 @@
 
 #import <UIKit/UIKit.h>
 
-enum PREBorderPosition {
+typedef NS_ENUM(NSUInteger, PREBorderPosition) {
     PREBorderPositionTop,
     PREBorderPositionBottom,
     PREBorderPositionLeft,
@@ -67,7 +67,7 @@ enum PREBorderPosition {
  *
  *  @param position the side of the view to which the line should be added
  */
-- (void)addRetinaPixelBorderAtPosition:(enum PREBorderPosition)position;
+- (void)addRetinaPixelBorderAtPosition:(PREBorderPosition)position;
 
 /**
  *  Add a single retina pixel line to the specified side of the view with the specified color.
@@ -75,7 +75,7 @@ enum PREBorderPosition {
  *  @param color color of the line
  *  @param position the side of the view to which the line should be added
  */
-- (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(enum PREBorderPosition)position;
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(PREBorderPosition)position;
 
 /**
  *  Add a line to the specified side of the view with the specified line width.
@@ -83,7 +83,7 @@ enum PREBorderPosition {
  *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
  *  @param position the side of the view to which the line should be added
  */
-- (void)addBorderWithWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
+- (void)addBorderWithWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
 
 /**
  *  Add a line to the specified side of the view with the specified color and the specified line width.
@@ -92,18 +92,23 @@ enum PREBorderPosition {
  *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
  *  @param position the side of the view to which the line should be added
  */
-- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(enum PREBorderPosition)position;
+- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
 
 /**
  *  Remove the line at the specified side of the view.
  *
  *  @param position the side of the view from which lines should be removed
  */
-- (void)removeBorderAtPosition:(enum PREBorderPosition)position;
+- (void)removeBorderAtPosition:(PREBorderPosition)position;
 
 /**
  *  Remove the lines from all sides of the view.
  */
 - (void)removeAllBorders;
+
+/**
+ *  Returns the layer of the border at the specified position
+ */
+- (CALayer*)borderAtPosition:(PREBorderPosition)position;
 
 @end
