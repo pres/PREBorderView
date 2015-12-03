@@ -46,7 +46,7 @@ static UIColor* _defaultBorderColor;
     }
 }
 
-#pragma mark - complete border
+#pragma mark - set complete border
 
 - (void)addRetinaPixelBorder {
     [self addRetinaPixelBorderWithColor:self.defaultBorderColor];
@@ -63,7 +63,7 @@ static UIColor* _defaultBorderColor;
     self.layer.borderColor = color.CGColor;
 }
 
-#pragma mark - single side border
+#pragma mark - set single side borders
 
 - (void)addRetinaPixelBorderAtPosition:(PREBorderPosition)position {
     [self addRetinaPixelBorderWithColor:self.defaultBorderColor atPosition:position];
@@ -156,7 +156,7 @@ static UIColor* _defaultBorderColor;
     [self.layer addSublayer:border];
 }
 
-#pragma mark -
+#pragma mark - get border
 
 - (CALayer*)borderAtPosition:(PREBorderPosition)position {
 
@@ -205,7 +205,7 @@ static UIColor* _defaultBorderColor;
     [self removeBorderAtPosition:PREBorderPositionRightOutside];
 }
 
-#pragma mark -
+#pragma mark - helper
 
 - (int)tagForPosition:(PREBorderPosition)position {
     

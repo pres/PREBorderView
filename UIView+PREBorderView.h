@@ -95,6 +95,11 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 - (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
 
 /**
+ *  Returns the layer of the border at the specified position
+ */
+- (CALayer*)borderAtPosition:(PREBorderPosition)position;
+
+/**
  *  Remove the line at the specified side of the view.
  *
  *  @param position the side of the view from which lines should be removed
@@ -105,10 +110,5 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
  *  Remove the lines from all sides of the view.
  */
 - (void)removeAllBorders;
-
-/**
- *  Returns the layer of the border at the specified position
- */
-- (CALayer*)borderAtPosition:(PREBorderPosition)position;
 
 @end
