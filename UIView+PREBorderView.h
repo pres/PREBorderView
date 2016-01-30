@@ -1,7 +1,7 @@
 //
 // UIView+PREBorderView.h
 //
-// Copyright (c) 2013-15 Paul Steinhilber (http://paulsteinhilber.de)
+// Copyright (c) 2013-16 Paul Steinhilber (http://paulsteinhilber.de)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
