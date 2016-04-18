@@ -44,7 +44,7 @@ Remove a line
 For convenience of usage you are able to specify a `defaultBorderColor` as well as 
 
 - `-addRetinaPixelBorderWithColor:atPosition:` which adds a line of with a width of one display pixel (retina pixel)
-- `addRetinaPixelBorderAtPosition:` adds the line useing the `defaultBorderColor`
+- `-addRetinaPixelBorderAtPosition:` adds the line useing the `defaultBorderColor`
 - ...
 
 ###[Full Documentation](http://cocoadocs.org/docsets/PREBorderView/3.0/Categories/UIView+PREBorderView.html)
@@ -61,4 +61,4 @@ For convenience of usage you are able to specify a `defaultBorderColor` as well 
 
 ## License
 
-PREBorderView is released under the MIT license. See LICENSE for details.
+`PREBorderView` is released under the MIT license. See `LICENSE` for details.
