@@ -43,54 +43,54 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 @property (nonatomic,readonly) CGFloat devicePixelSize;
 
 /**
- *  Add a border to a view with the line width of one retina pixel.
+ *  Add a border to a view with the border width of one retina pixel.
  */
 - (void)addRetinaPixelBorder;
 
 /**
- *  Add a border to a view with the line width of one retina pixel with the specified color.
+ *  Add a border to a view with the border width of one retina pixel with the specified color.
  *
- *  @param color color of the line
+ *  @param color color of the border
  */
 - (void)addRetinaPixelBorderWithColor:(UIColor*)color;
 
 /**
- *  Add a border to a view with the specified line width and the specified color.
+ *  Add a border to a view with the specified border width and the specified color.
  *
- *  @param color color of the line
- *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
+ *  @param color color of the border
+ *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
  */
 - (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth;
 
 /**
- *  Add a single retina pixel line to the specified side of the view.
+ *  Add a single retina pixel border to the specified side of the view.
  *
- *  @param position the side of the view to which the line should be added
+ *  @param position the side of the view to which the border should be added
  */
 - (void)addRetinaPixelBorderAtPosition:(PREBorderPosition)position;
 
 /**
- *  Add a single retina pixel line to the specified side of the view with the specified color.
+ *  Add a single retina pixel border to the specified side of the view with the specified color.
  *
- *  @param color color of the line
- *  @param position the side of the view to which the line should be added
+ *  @param color color of the border
+ *  @param position the side of the view to which the border should be added
  */
 - (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(PREBorderPosition)position;
 
 /**
- *  Add a line to the specified side of the view with the specified line width.
+ *  Add a border to the specified side of the view with the specified border width.
  *
- *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
- *  @param position the side of the view to which the line should be added
+ *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
+ *  @param position the side of the view to which the border should be added
  */
 - (void)addBorderWithWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
 
 /**
- *  Add a line to the specified side of the view with the specified color and the specified line width.
+ *  Add a border to the specified side of the view with the specified color and the specified border width.
  *
- *  @param color color of the line
- *  @param lineWidth the width of the line in logical px. Use @c devicePixelSize to get a single retina/device pixel line.
- *  @param position the side of the view to which the line should be added
+ *  @param color color of the border
+ *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
+ *  @param position the side of the view to which the border should be added
  */
 - (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
 
@@ -100,15 +100,27 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 - (CALayer*)borderAtPosition:(PREBorderPosition)position;
 
 /**
- *  Remove the line at the specified side of the view.
+ *  Remove the border at the specified side of the view.
  *
- *  @param position the side of the view from which lines should be removed
+ *  @param position the side of the view from which borders should be removed
  */
 - (void)removeBorderAtPosition:(PREBorderPosition)position;
 
 /**
- *  Remove the lines from all sides of the view.
+ *  Remove the borders from all sides of the view.
  */
 - (void)removeAllBorders;
+
+/**
+ *  Redraw all borders of this view taking into account the size of the view.
+ *  Can be called e.g. after @c setFrame: to update the borders to the new frame size.
+ */
+- (void)layoutBorders;
+
+/**
+ *  Redraw all borders of this view, as well as the borders of all subviews.
+ *  Can be called e.g. in @c viewDidLayoutSubviews to adapt all borders to updated changes from e.g. autolayout.
+ */
+- (void)layoutSubviewBorders;
 
 @end

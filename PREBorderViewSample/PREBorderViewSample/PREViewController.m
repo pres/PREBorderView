@@ -2,8 +2,25 @@
 //  PREViewController.m
 //  PREBorderViewSample
 //
-//  Created by Paul Steinhilber on 14.02.2014.
-//  Copyright (c) 2014 Paul Steinhilber. All rights reserved.
+// Copyright (c) 2013-16 Paul Steinhilber (http://paulsteinhilber.de)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 //
 
 #import "PREViewController.h"
@@ -25,11 +42,13 @@
 @implementation PREViewController
 
 - (void)viewDidLoad {
-
     [super viewDidLoad];
     
     [sample1 addRetinaPixelBorder];
-    [sample2 addRetinaPixelBorderWithColor:[UIColor grayColor]];
+    
+    [sample2 addRetinaPixelBorderAtPosition:PREBorderPositionRight];
+    [sample2 addRetinaPixelBorderAtPosition:PREBorderPositionTop];
+    
     [sample3 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
     [sample4 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionBottom];
     
@@ -52,14 +71,15 @@
     [sample5 addBorderWithColor:[UIColor yellowColor] andWidth:10 atPosition:PREBorderPositionLeftOutside];
 }
 
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
+- (void)viewDidLayoutSubviews {
+    [self.view layoutSubviewBorders];
 }
 
 #pragma mark -
 
 - (void)removeLine {
+    [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 80-20, 50-10)];
+    [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130, 130)];
     
     [sample4 removeBorderAtPosition:PREBorderPositionTop];
     [sample4 removeBorderAtPosition:PREBorderPositionRight];
@@ -82,9 +102,13 @@
     
     [sample8 removeBorderAtPosition:PREBorderPositionRight];
     [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
+    
+    [self.view layoutSubviewBorders];
 }
 
 - (void)addLine {
+    [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 100, 100)];
+    [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130-40, 130-20)];
     
     [sample4 removeBorderAtPosition:PREBorderPositionTopOutside];
     [sample4 removeBorderAtPosition:PREBorderPositionRightOutside];
@@ -106,6 +130,8 @@
     
     [sample8 addBorderWithColor:[UIColor orangeColor] andWidth:8 atPosition:PREBorderPositionRight];
     [self performSelector:@selector(removeLine) withObject:nil afterDelay:0.5];
+    
+    [self.view layoutSubviewBorders];
 }
 
 @end

@@ -205,6 +205,41 @@ static UIColor* _defaultBorderColor;
     [self removeBorderAtPosition:PREBorderPositionRightOutside];
 }
 
+#pragma mark - resize
+
+- (void)layoutSubviewBorders {
+    [self.subviews makeObjectsPerformSelector:@selector(layoutSubviewBorders)];
+    [self layoutBorders];
+}
+
+- (void)layoutBorders {
+    NSArray* positions = @[@(PREBorderPositionTop), @(PREBorderPositionBottom), @(PREBorderPositionLeft), @(PREBorderPositionRight), @(PREBorderPositionTopOutside), @(PREBorderPositionBottomOutside), @(PREBorderPositionLeftOutside), @(PREBorderPositionRightOutside)];
+    
+    for (NSNumber* pos in positions) {
+        CALayer* border = [self borderAtPosition:pos.unsignedIntegerValue];
+        if (border) {
+            UIColor* color = [UIColor colorWithCGColor:border.backgroundColor];
+            float width;
+            switch (pos.unsignedIntegerValue) {
+                case PREBorderPositionTop:
+                case PREBorderPositionBottom:
+                case PREBorderPositionTopOutside:
+                case PREBorderPositionBottomOutside:
+                    width = border.frame.size.height;
+                    break;
+                    
+                case PREBorderPositionLeft:
+                case PREBorderPositionRight:
+                case PREBorderPositionLeftOutside:
+                case PREBorderPositionRightOutside:
+                    width = border.frame.size.width;
+                    break;
+            }
+            [self addBorderWithColor:color andWidth:width atPosition:pos.unsignedIntegerValue];
+        }
+    }
+}
+
 #pragma mark - helper
 
 - (int)tagForPosition:(PREBorderPosition)position {
