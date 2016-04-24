@@ -53,7 +53,7 @@ To easily update all borders to size changes of views use
   
 To update a controller's view to auto layout changes call `layoutSubviewBorders` in `viewDidLayoutSubviews`.
 
-###[Full Documentation](http://cocoadocs.org/docsets/PREBorderView/3.0/Categories/UIView+PREBorderView.html)
+###[Full Documentation](http://cocoadocs.org/docsets/PREBorderView)
 
 ---
 
