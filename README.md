@@ -43,9 +43,15 @@ Remove a line
 
 For convenience of usage you are able to specify a `defaultBorderColor` as well as 
 
-- `-addRetinaPixelBorderWithColor:atPosition:` which adds a line of with a width of one display pixel (retina pixel)
-- `-addRetinaPixelBorderAtPosition:` adds the line useing the `defaultBorderColor`
+- `addRetinaPixelBorderWithColor:atPosition:` which adds a line of with a width of one display pixel (retina pixel)
+- `addRetinaPixelBorderAtPosition:` adds the line useing the `defaultBorderColor`
 - ...
+
+To easily update all borders to size changes of views use 
+  - Use `layoutBorders` to update borders of a view.
+  - Use `layoutSubviewBorders` to update borders of a view, as well as all borders of subviews.
+  
+To update a controller's view to auto layout changes call `layoutSubviewBorders` in `viewDidLayoutSubviews`.
 
 ###[Full Documentation](http://cocoadocs.org/docsets/PREBorderView/3.0/Categories/UIView+PREBorderView.html)
 
