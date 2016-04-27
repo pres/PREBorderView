@@ -234,6 +234,9 @@ static UIColor* _defaultBorderColor;
                 case PREBorderPositionRightOutside:
                     width = border.frame.size.width;
                     break;
+                    
+                default:
+                    width = [self devicePixelSize];
             }
             [self addBorderWithColor:color andWidth:width atPosition:pos.unsignedIntegerValue];
         }
