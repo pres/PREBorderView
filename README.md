@@ -17,7 +17,7 @@ A very simple Objective-C `UIView` category for specifying single-sided borders.
 ####Podfile
 
 ```ruby
-pod 'PREBorderView', "~> 3.0"
+pod 'PREBorderView', "~> 3.1"
 ```
 
 ###Manual

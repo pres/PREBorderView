@@ -4,10 +4,15 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
+##[3.1.1](https://github.com/pres/PREBorderView/releases/tag/3.1.1) (2016-10-21)
+
+#### Fixes
+* Fixed an issue with Auto Layout where `layoutSubviewBorders` did not correctly layout all borders.
+
 ##[3.1.0](https://github.com/pres/PREBorderView/releases/tag/3.1.0) (2016-04-24)
 
 #### Added
-* Added functionality to easily update all borders to size changes of views, which improves compatibility with auto layout.
+* Added functionality to easily update all borders to size changes of views, which improves compatibility with Auto Layout.
   * Use `layoutBorders` to update borders of a view.
   * Use `layoutSubviewBorders` to update borders of a view, as well as all borders of subviews.
 
