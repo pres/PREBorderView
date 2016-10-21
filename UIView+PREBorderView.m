@@ -209,6 +209,7 @@ static UIColor* _defaultBorderColor;
 
 - (void)layoutSubviewBorders {
     [self.subviews makeObjectsPerformSelector:@selector(layoutSubviewBorders)];
+    [self layoutIfNeeded];
     [self layoutBorders];
 }
 
