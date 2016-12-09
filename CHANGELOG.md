@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
+##[3.2.0](https://github.com/pres/PREBorderView/releases/tag/3.2.0) (2016-12-09)
+
+#### Added
+* Added functionality to add a margin to each border, for cases when you don't want the border span the whole width/height of the corresponding view.
+
 ##[3.1.1](https://github.com/pres/PREBorderView/releases/tag/3.1.1) (2016-10-21)
 
 #### Fixes

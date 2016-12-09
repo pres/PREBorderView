@@ -53,8 +53,11 @@
     [sample3 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
     [sample4 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionBottom];
     
-    [sample7 addBorderWithColor:[UIColor redColor] andWidth:5 atPosition:PREBorderPositionTop];
-    [sample7 addBorderWithColor:[UIColor greenColor] andWidth:10 atPosition:PREBorderPositionBottom];
+    [sample7 addBorderWithColor:[UIColor redColor] andWidth:5 withMargin:5 atPosition:PREBorderPositionTop];
+    [sample7 addBorderWithColor:[UIColor greenColor] andWidth:10 withMargin:10 atPosition:PREBorderPositionBottom];
+    
+    [sample7 addBorderWithColor:[UIColor greenColor] andWidth:10 withMargin:20 atPosition:PREBorderPositionLeftOutside];
+    [sample7 addBorderWithColor:[UIColor greenColor] andWidth:10 withMargin:20 atPosition:PREBorderPositionRightOutside];
     
     [sample8 addBorderWithColor:[UIColor purpleColor] andWidth:5 atPosition:PREBorderPositionTop];
     [sample8 addBorderWithColor:[UIColor magentaColor] andWidth:5 atPosition:PREBorderPositionLeft];

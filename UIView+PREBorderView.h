@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
  *  @param color color of the border
  *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
  */
-- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth;
+- (void)addBorderWithColor:(UIColor*)color andWidth:(CGFloat)lineWidth;
 
 /**
  *  Add a single retina pixel border to the specified side of the view.
@@ -79,12 +79,30 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 - (void)addRetinaPixelBorderWithColor:(UIColor*)color atPosition:(PREBorderPosition)position;
 
 /**
+ *  Add a single retina pixel border to the specified side of the view with the specified color.
+ *
+ *  @param color color of the border
+ *  @param margin the margin of the border compared to the view
+ *  @param position the side of the view to which the border should be added
+ */
+- (void)addRetinaPixelBorderWithColor:(UIColor*)color andMargin:(CGFloat)margin atPosition:(PREBorderPosition)position;
+
+/**
  *  Add a border to the specified side of the view with the specified border width.
  *
  *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
  *  @param position the side of the view to which the border should be added
  */
-- (void)addBorderWithWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
+- (void)addBorderWithWidth:(CGFloat)lineWidth atPosition:(PREBorderPosition)position;
+
+/**
+ *  Add a border to the specified side of the view with the specified border width.
+ *
+ *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
+ *  @param margin the margin of the border compared to the view
+ *  @param position the side of the view to which the border should be added
+ */
+- (void)addBorderWithWidth:(CGFloat)lineWidth andMargin:(CGFloat)margin atPosition:(PREBorderPosition)position;
 
 /**
  *  Add a border to the specified side of the view with the specified color and the specified border width.
@@ -93,7 +111,17 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
  *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
  *  @param position the side of the view to which the border should be added
  */
-- (void)addBorderWithColor:(UIColor*)color andWidth:(float)lineWidth atPosition:(PREBorderPosition)position;
+- (void)addBorderWithColor:(UIColor*)color andWidth:(CGFloat)lineWidth atPosition:(PREBorderPosition)position;
+
+/**
+ *  Add a border to the specified side of the view with the specified color and the specified border width.
+ *
+ *  @param color color of the border
+ *  @param lineWidth the width of the border in logical px. Use @c devicePixelSize to get a single retina/device pixel border.
+ *  @param margin the margin of the border compared to the view
+ *  @param position the side of the view to which the border should be added
+ */
+- (void)addBorderWithColor:(UIColor*)color andWidth:(CGFloat)lineWidth withMargin:(CGFloat)margin atPosition:(PREBorderPosition)position;
 
 /**
  *  Returns the layer of the border at the specified position
