@@ -2,7 +2,7 @@
 //  PREViewController.m
 //  PREBorderViewSample
 //
-//  Copyright (c) 2013-16 Paul Steinhilber
+//  Copyright (c) 2013-17 Paul Steinhilber
 //  http://paulsteinhilber.de
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
