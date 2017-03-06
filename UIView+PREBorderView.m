@@ -54,7 +54,6 @@ static UIColor* _defaultBorderColor;
 }
 
 - (void)addRetinaPixelBorderWithColor:(UIColor*)color {
-    
     double retinaPixelSize = 1./[UIScreen mainScreen].scale;
     [self addBorderWithColor:color andWidth:retinaPixelSize];
 }
@@ -173,12 +172,10 @@ static UIColor* _defaultBorderColor;
 #pragma mark - get border
 
 - (CALayer*)borderAtPosition:(PREBorderPosition)position {
-
     int tag = [self tagForPosition:position];
     
     __block CALayer* border;
-    
-    [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer *layer, NSUInteger idx, BOOL *stop) {
+    [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer* layer, NSUInteger idx, BOOL *stop) {
         if ([[layer valueForKey:@"tag"] intValue] == tag) {
             *stop = YES;
             border = layer;
@@ -191,23 +188,11 @@ static UIColor* _defaultBorderColor;
 #pragma mark - border removal
 
 - (void)removeBorderAtPosition:(PREBorderPosition)position {
-
-    int tag = [self tagForPosition:position];
-
-    __block CALayer* toRemove;
-
-    [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer *layer, NSUInteger idx, BOOL *stop) {
-        if ([[layer valueForKey:@"tag"] intValue] == tag) {
-            *stop = YES;
-            toRemove = layer;
-        }
-    }];
-
+    CALayer* toRemove = [self borderAtPosition:position];
     [toRemove removeFromSuperlayer];
 }
 
 - (void)removeAllBorders {
-    
     [self removeBorderAtPosition:PREBorderPositionTop];
     [self removeBorderAtPosition:PREBorderPositionBottom];
     [self removeBorderAtPosition:PREBorderPositionLeft];
