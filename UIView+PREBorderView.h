@@ -39,9 +39,9 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 @interface UIView (PREBorderView)
 
 /// default color to use for borders that don't specify a color.
-@property (nonatomic,retain) UIColor* defaultBorderColor;
+@property (nonatomic, retain) UIColor* defaultBorderColor;
 /// the size of a device pixel
-@property (nonatomic,readonly) CGFloat devicePixelSize;
+@property (nonatomic, readonly) CGFloat devicePixelSize;
 
 /**
  *  Add a border to a view with the border width of one retina pixel.

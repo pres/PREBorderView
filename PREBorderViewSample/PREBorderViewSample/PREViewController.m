@@ -62,7 +62,7 @@
     [sample8 addBorderWithColor:[UIColor purpleColor] andWidth:5 atPosition:PREBorderPositionTop];
     [sample8 addBorderWithColor:[UIColor magentaColor] andWidth:5 atPosition:PREBorderPositionLeft];
     [sample8 addBorderWithColor:[UIColor magentaColor] andWidth:2 atPosition:PREBorderPositionBottom];
-
+    
     [self performSelector:@selector(addLine) withObject:nil afterDelay:0.5];
     
     [sample5 addBorderWithColor:[UIColor yellowColor] andWidth:10 atPosition:PREBorderPositionTop];
@@ -82,7 +82,7 @@
 #pragma mark -
 
 - (void)removeLine {
-    [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 80-20, 50-10)];
+    [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 80 - 20, 50 - 10)];
     [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130, 130)];
     
     [sample4 removeBorderAtPosition:PREBorderPositionTop];
@@ -93,7 +93,7 @@
     [sample4 addBorderWithColor:[UIColor purpleColor] andWidth:10 atPosition:PREBorderPositionBottomOutside];
     [sample4 addBorderWithColor:[UIColor purpleColor] andWidth:10 atPosition:PREBorderPositionRightOutside];
     [sample4 addBorderWithColor:[UIColor purpleColor] andWidth:10 atPosition:PREBorderPositionTopOutside];
-
+    
     
     [sample6 removeBorderAtPosition:PREBorderPositionTopOutside];
     [sample6 removeBorderAtPosition:PREBorderPositionRightOutside];
@@ -112,7 +112,7 @@
 
 - (void)addLine {
     [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 100, 100)];
-    [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130-40, 130-20)];
+    [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130 - 40, 130 - 20)];
     
     [sample4 removeBorderAtPosition:PREBorderPositionTopOutside];
     [sample4 removeBorderAtPosition:PREBorderPositionRightOutside];
