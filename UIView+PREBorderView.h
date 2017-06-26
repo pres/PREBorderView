@@ -1,5 +1,5 @@
-//
 //  UIView+PREBorderView.h
+//  PREBorderView
 //
 //  Copyright (c) 2013-17 Paul Steinhilber
 //  http://paulsteinhilber.de

@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
+##[3.2.1](#) (not yet released)
+
+#### Updated
+* Prefixed `_defaultBorderColor` to `pre_defaultBorderColor` to make name clashes more unlikely.
+
 ##[3.2.0](https://github.com/pres/PREBorderView/releases/tag/3.2.0) (2016-12-09)
 
 #### Added
@@ -21,10 +26,10 @@ All notable changes to this project will be documented in this file.
   * Use `layoutBorders` to update borders of a view.
   * Use `layoutSubviewBorders` to update borders of a view, as well as all borders of subviews.
 
-##[3.0](https://github.com/pres/PREBorderView/releases/tag/3.0) (2015-11-23)
+##[3.0.0](https://github.com/pres/PREBorderView/releases/tag/3.0) (2015-11-23)
 
 #### Added
-* You can now specify if a border is dranw inside or outside of the view
+* You can now specify if a border should be drawn inside or outside of the view
   * Current behaviour does not change
   * Extended `PREBorderPosition` to add `*Outside` variants.
 

@@ -1,5 +1,5 @@
-//
 //  UIView+PREBorderView.m
+//  PREBorderView
 //
 //  Copyright (c) 2013-17 Paul Steinhilber
 //  http://paulsteinhilber.de
@@ -29,21 +29,21 @@
 
 #pragma mark - default border
 
-static UIColor* _defaultBorderColor;
+static UIColor* pre_defaultBorderColor;
 
 - (void)setDefaultBorderColor:(UIColor*)defaultBorderColor {
-    _defaultBorderColor = defaultBorderColor;
+    pre_defaultBorderColor = defaultBorderColor;
 }
 
 - (UIColor*)defaultBorderColor {
-    if (!_defaultBorderColor) {
+    if (!pre_defaultBorderColor) {
         if ([self respondsToSelector:@selector(tintColor)]) {
             return self.tintColor;
         } else {
             return [UIColor blueColor];
         }
     } else {
-        return _defaultBorderColor;
+        return pre_defaultBorderColor;
     }
 }
 
@@ -54,8 +54,7 @@ static UIColor* _defaultBorderColor;
 }
 
 - (void)addRetinaPixelBorderWithColor:(UIColor*)color {
-    double retinaPixelSize = 1. / [UIScreen mainScreen].scale;
-    [self addBorderWithColor:color andWidth:retinaPixelSize];
+    [self addBorderWithColor:color andWidth:self.devicePixelSize];
 }
 
 - (void)addBorderWithColor:(UIColor*)color andWidth:(CGFloat)lineWidth {
@@ -239,7 +238,7 @@ static UIColor* _defaultBorderColor;
                     break;
 
                 default:
-                    width = [self devicePixelSize];
+                    width = self.devicePixelSize;
                     margin = 0;
             }
             [self addBorderWithColor:color andWidth:width withMargin:margin atPosition:pos.unsignedIntegerValue];
