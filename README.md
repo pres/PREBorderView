@@ -28,11 +28,19 @@ Otherwise just include `UIView+PREBorderView.{h,m}` in your project.
 
 ## Usage
 
-Add a border to a view
+#### Add a border to a view
 
 ```objective-c
 [view addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionRight];
 ```
+
+#### Remove a border
+
+```objective-c
+[view removeBorderAtPosition:PREBorderPositionRight];
+```
+
+#### `defaultBorderColor`
 
 For convenience of usage you are able to specify a `defaultBorderColor`.
 - `addRetinaPixelBorderWithColor:atPosition:`
@@ -40,17 +48,13 @@ For convenience of usage you are able to specify a `defaultBorderColor`.
 
 adds the border using `defaultBorderColor`
 
+#### Respond to size changes
+
 To easily update all borders to size changes of views 
   - Use `layoutBorders` to update borders of a view.
   - Use `layoutSubviewBorders` to update borders of a view, as well as all borders of subviews.
   
 To update a controller's view to auto layout changes call `layoutSubviewBorders` in `viewDidLayoutSubviews`.
-
-Remove a border
-
-```objective-c
-[view removeBorderAtPosition:PREBorderPositionRight];
-```
 
 ### [Full Documentation](http://cocoadocs.org/docsets/PREBorderView)
 
