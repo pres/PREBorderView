@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
-## [3.2.1](#) (not yet released)
+## [3.2.1](https://github.com/pres/PREBorderView/releases/tag/3.2.1) (2018-06-05)
 
 #### Updated
 * Prefixed `_defaultBorderColor` to `pre_defaultBorderColor` to make name clashes more unlikely.
