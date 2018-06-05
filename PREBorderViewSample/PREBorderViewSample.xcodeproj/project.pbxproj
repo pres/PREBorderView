@@ -14,7 +14,7 @@
 		3DC8846918AE790F006D695E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8846818AE790F006D695E /* main.m */; };
 		3DC8846D18AE790F006D695E /* PREAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8846C18AE790F006D695E /* PREAppDelegate.m */; };
 		3DC8847018AE790F006D695E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8846E18AE790F006D695E /* Main.storyboard */; };
-		3DC8847318AE790F006D695E /* PREViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8847218AE790F006D695E /* PREViewController.m */; };
+		3DC8847318AE790F006D695E /* PREBorderViewSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8847218AE790F006D695E /* PREBorderViewSampleViewController.m */; };
 		3DC8847518AE790F006D695E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8847418AE790F006D695E /* Images.xcassets */; };
 		3DC8847C18AE790F006D695E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC8847B18AE790F006D695E /* XCTest.framework */; };
 		3DC8847D18AE790F006D695E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC8845C18AE790F006D695E /* Foundation.framework */; };
@@ -46,8 +46,8 @@
 		3DC8846B18AE790F006D695E /* PREAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PREAppDelegate.h; sourceTree = "<group>"; };
 		3DC8846C18AE790F006D695E /* PREAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PREAppDelegate.m; sourceTree = "<group>"; };
 		3DC8846F18AE790F006D695E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3DC8847118AE790F006D695E /* PREViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PREViewController.h; sourceTree = "<group>"; };
-		3DC8847218AE790F006D695E /* PREViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PREViewController.m; sourceTree = "<group>"; };
+		3DC8847118AE790F006D695E /* PREBorderViewSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PREBorderViewSampleViewController.h; sourceTree = "<group>"; };
+		3DC8847218AE790F006D695E /* PREBorderViewSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PREBorderViewSampleViewController.m; sourceTree = "<group>"; };
 		3DC8847418AE790F006D695E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DC8847A18AE790F006D695E /* PREBorderViewSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PREBorderViewSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC8847B18AE790F006D695E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -120,8 +120,8 @@
 				3DC8846B18AE790F006D695E /* PREAppDelegate.h */,
 				3DC8846C18AE790F006D695E /* PREAppDelegate.m */,
 				3DC8846E18AE790F006D695E /* Main.storyboard */,
-				3DC8847118AE790F006D695E /* PREViewController.h */,
-				3DC8847218AE790F006D695E /* PREViewController.m */,
+				3DC8847118AE790F006D695E /* PREBorderViewSampleViewController.h */,
+				3DC8847218AE790F006D695E /* PREBorderViewSampleViewController.m */,
 				3DC8847418AE790F006D695E /* Images.xcassets */,
 				3DC8846318AE790F006D695E /* Supporting Files */,
 			);
@@ -257,7 +257,7 @@
 			files = (
 				3DC8846D18AE790F006D695E /* PREAppDelegate.m in Sources */,
 				3DC8849318AE7F3F006D695E /* UIView+PREBorderView.m in Sources */,
-				3DC8847318AE790F006D695E /* PREViewController.m in Sources */,
+				3DC8847318AE790F006D695E /* PREBorderViewSampleViewController.m in Sources */,
 				3DC8846918AE790F006D695E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,12 +320,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -370,12 +372,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

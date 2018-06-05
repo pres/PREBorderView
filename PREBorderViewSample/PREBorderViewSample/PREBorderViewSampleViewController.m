@@ -1,9 +1,9 @@
 //
-//  PREViewController.m
+//  PREBorderViewSampleViewController.m
 //  PREBorderViewSample
 //
-//  Copyright (c) 2013-18 Paul Steinhilber
-//  http://paulsteinhilber.de
+//  Copyright (c) 2013-2018 Paul Steinhilber
+//  https://paulsteinhilber.de
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,10 @@
 //  THE SOFTWARE.
 //
 
-#import "PREViewController.h"
+#import "PREBorderViewSampleViewController.h"
 #import "UIView+PREBorderView.h"
 
-@interface PREViewController () {
+@interface PREBorderViewSampleViewController () {
     IBOutlet UIView* sample1;
     IBOutlet UIView* sample2;
     IBOutlet UIView* sample3;
@@ -40,7 +40,7 @@
 
 @end
 
-@implementation PREViewController
+@implementation PREBorderViewSampleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
