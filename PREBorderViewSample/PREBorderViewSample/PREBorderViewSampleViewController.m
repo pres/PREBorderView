@@ -94,7 +94,6 @@
     [sample4 addBorderWithColor:[UIColor purpleColor] andWidth:10 atPosition:PREBorderPositionRightOutside];
     [sample4 addBorderWithColor:[UIColor purpleColor] andWidth:10 atPosition:PREBorderPositionTopOutside];
     
-    
     [sample6 removeBorderAtPosition:PREBorderPositionTopOutside];
     [sample6 removeBorderAtPosition:PREBorderPositionRightOutside];
     [sample6 removeBorderAtPosition:PREBorderPositionBottomOutside];

@@ -32,7 +32,7 @@ Otherwise just include `UIView+PREBorderView.{h,m}` in your project.
 #### Add a border to a view
 
 ```objective-c
-[view addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionRight];
+[view addBorderWithColor:UIColor.blackColor andWidth:2 atPosition:PREBorderPositionRight];
 ```
 
 #### Remove a border
@@ -44,7 +44,7 @@ Otherwise just include `UIView+PREBorderView.{h,m}` in your project.
 #### `defaultBorderColor`
 
 For convenience of usage you are able to specify a `defaultBorderColor`.
-- `addRetinaPixelBorderWithColor:atPosition:`
+- `addBorderWithWidth:atPosition:`
 - `addRetinaPixelBorderAtPosition:`
 
 adds the border using `defaultBorderColor`

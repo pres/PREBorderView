@@ -91,30 +91,30 @@ static UIColor* pre_defaultBorderColor;
 #pragma mark - set single side borders
 
 - (void)addBorderWithColor:(UIColor*)color andWidth:(CGFloat)lineWidth withMargin:(CGFloat)margin atPosition:(PREBorderPosition)position {
-
+    
     // min lineweight is one device pixel
     lineWidth = MAX(self.devicePixelSize, lineWidth);
-
+    
     CALayer* border = [CALayer layer];
     CGRect frame;
-
+    
     switch (position) {
         case PREBorderPositionTop:
             frame = CGRectMake(margin, 0, self.frame.size.width - 2 * margin, lineWidth);
             break;
-
+            
         case PREBorderPositionBottom:
             frame = CGRectMake(margin, self.frame.size.height - lineWidth, self.frame.size.width - 2 * margin, lineWidth);
             break;
-
+            
         case PREBorderPositionLeft:
             frame = CGRectMake(0, margin, lineWidth, self.frame.size.height - 2 * margin);
             break;
-
+            
         case PREBorderPositionRight:
             frame = CGRectMake(self.frame.size.width - lineWidth, margin, lineWidth, self.frame.size.height - 2 * margin);
             break;
-
+            
         case PREBorderPositionTopOutside:
             frame = CGRectMake(margin, -lineWidth, self.frame.size.width - 2 * margin, lineWidth);
             if ([self borderAtPosition:PREBorderPositionLeftOutside] && !margin) {
@@ -125,7 +125,7 @@ static UIColor* pre_defaultBorderColor;
                 frame.size.width += [self borderAtPosition:PREBorderPositionRightOutside].frame.size.width;
             }
             break;
-
+            
         case PREBorderPositionBottomOutside:
             frame = CGRectMake(margin, self.frame.size.height, self.frame.size.width - 2 * margin, lineWidth);
             if ([self borderAtPosition:PREBorderPositionLeftOutside] && !margin) {
@@ -136,7 +136,7 @@ static UIColor* pre_defaultBorderColor;
                 frame.size.width += [self borderAtPosition:PREBorderPositionRightOutside].frame.size.width;
             }
             break;
-
+            
         case PREBorderPositionLeftOutside:
             frame = CGRectMake(-lineWidth, margin, lineWidth, self.frame.size.height - 2 * margin);
             if ([self borderAtPosition:PREBorderPositionTopOutside] && !margin) {
@@ -147,7 +147,7 @@ static UIColor* pre_defaultBorderColor;
                 frame.size.height += [self borderAtPosition:PREBorderPositionBottomOutside].frame.size.height;
             }
             break;
-
+            
         case PREBorderPositionRightOutside:
             frame = CGRectMake(self.frame.size.width, margin, lineWidth, self.frame.size.height - 2 * margin);
             if ([self borderAtPosition:PREBorderPositionTopOutside] && !margin) {
@@ -159,10 +159,10 @@ static UIColor* pre_defaultBorderColor;
             }
             break;
     }
-
+    
     border.frame = frame;
     border.backgroundColor = color.CGColor;
-
+    
     [self removeBorderAtPosition:position];
     [border setValue:@([self tagForPosition:position]) forKey:@"tag"];
     [self.layer addSublayer:border];
@@ -172,7 +172,7 @@ static UIColor* pre_defaultBorderColor;
 
 - (CALayer*)borderAtPosition:(PREBorderPosition)position {
     int tag = [self tagForPosition:position];
-
+    
     __block CALayer* border;
     [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer* layer, NSUInteger idx, BOOL* stop) {
         if ([[layer valueForKey:@"tag"] intValue] == tag) {
@@ -180,7 +180,7 @@ static UIColor* pre_defaultBorderColor;
             border = layer;
         }
     }];
-
+    
     return border;
 }
 
@@ -196,7 +196,7 @@ static UIColor* pre_defaultBorderColor;
     [self removeBorderAtPosition:PREBorderPositionBottom];
     [self removeBorderAtPosition:PREBorderPositionLeft];
     [self removeBorderAtPosition:PREBorderPositionRight];
-
+    
     [self removeBorderAtPosition:PREBorderPositionTopOutside];
     [self removeBorderAtPosition:PREBorderPositionBottomOutside];
     [self removeBorderAtPosition:PREBorderPositionLeftOutside];
@@ -212,8 +212,17 @@ static UIColor* pre_defaultBorderColor;
 }
 
 - (void)layoutBorders {
-    NSArray<NSNumber*>* positions = @[@(PREBorderPositionTop), @(PREBorderPositionBottom), @(PREBorderPositionLeft), @(PREBorderPositionRight), @(PREBorderPositionTopOutside), @(PREBorderPositionBottomOutside), @(PREBorderPositionLeftOutside), @(PREBorderPositionRightOutside)];
-
+    NSArray<NSNumber*>* positions = @[
+                                      @(PREBorderPositionTop),
+                                      @(PREBorderPositionBottom),
+                                      @(PREBorderPositionLeft),
+                                      @(PREBorderPositionRight),
+                                      @(PREBorderPositionTopOutside),
+                                      @(PREBorderPositionBottomOutside),
+                                      @(PREBorderPositionLeftOutside),
+                                      @(PREBorderPositionRightOutside)
+                                      ];
+    
     for (NSNumber* pos in positions) {
         CALayer* border = [self borderAtPosition:pos.unsignedIntegerValue];
         if (border) {
@@ -228,7 +237,7 @@ static UIColor* pre_defaultBorderColor;
                     width = border.frame.size.height;
                     margin = border.frame.origin.x;
                     break;
-
+                    
                 case PREBorderPositionLeft:
                 case PREBorderPositionRight:
                 case PREBorderPositionLeftOutside:
@@ -236,11 +245,12 @@ static UIColor* pre_defaultBorderColor;
                     width = border.frame.size.width;
                     margin = border.frame.origin.y;
                     break;
-
+                    
                 default:
                     width = self.devicePixelSize;
                     margin = 0;
             }
+            
             [self addBorderWithColor:color andWidth:width withMargin:margin atPosition:pos.unsignedIntegerValue];
         }
     }
@@ -249,9 +259,9 @@ static UIColor* pre_defaultBorderColor;
 #pragma mark - helper
 
 - (int)tagForPosition:(PREBorderPosition)position {
-
+    
     int tag = 32147582;
-
+    
     switch (position) {
         case PREBorderPositionTop:              return tag;
         case PREBorderPositionBottom:           return tag + 1;
@@ -263,13 +273,13 @@ static UIColor* pre_defaultBorderColor;
         case PREBorderPositionLeftOutside:      return tag + 6;
         case PREBorderPositionRightOutside:     return tag + 7;
     }
-
+    
     NSAssert(NO, @"invalid position");
     return 0;
 }
 
 - (CGFloat)devicePixelSize {
-    return 1. / [UIScreen mainScreen].scale;
+    return 1. / UIScreen.mainScreen.scale;
 }
 
 @end
