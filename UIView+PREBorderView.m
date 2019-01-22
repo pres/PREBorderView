@@ -201,6 +201,8 @@ static UIColor* pre_defaultBorderColor;
     [self removeBorderAtPosition:PREBorderPositionBottomOutside];
     [self removeBorderAtPosition:PREBorderPositionLeftOutside];
     [self removeBorderAtPosition:PREBorderPositionRightOutside];
+    
+    [self addBorderWithColor:UIColor.clearColor andWidth:0];
 }
 
 #pragma mark - resize
