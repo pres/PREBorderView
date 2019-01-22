@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PREBorderView"
-  s.version      = "3.2.1"
+  s.version      = "3.2.2"
   s.summary      = "A very simple Objective-C UIView category for specifying single-sided borders."
   s.homepage     = "https://github.com/pres/PREBorderView"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }

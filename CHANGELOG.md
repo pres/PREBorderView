@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
+## [3.2.2](https://github.com/pres/PREBorderView/releases/tag/3.2.2) (2019-01-22)
+
+#### Fixes
+* `-removeAllBorders` did not remove all borders. Borders added to all sides using `-addRetinaPixelBorder`, `-addRetinaPixelBorderWithColor:` or `-addBorderWithColor:andWidth:` haven't been removed. They will be now.
+
 ## [3.2.1](https://github.com/pres/PREBorderView/releases/tag/3.2.1) (2018-06-05)
 
 #### Updated
