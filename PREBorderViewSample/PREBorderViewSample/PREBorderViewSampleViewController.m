@@ -82,6 +82,8 @@
 #pragma mark -
 
 - (void)removeLine {
+    [sample1 addRetinaPixelBorder];
+    
     [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 80 - 20, 50 - 10)];
     [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130, 130)];
     
@@ -110,6 +112,8 @@
 }
 
 - (void)addLine {
+    [sample1 removeAllBorders];
+    
     [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 100, 100)];
     [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130 - 40, 130 - 20)];
     
