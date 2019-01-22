@@ -1,7 +1,7 @@
 //  UIView+PREBorderView.m
 //  PREBorderView
 //
-//  Copyright (c) 2013-2018 Paul Steinhilber
+//  Copyright (c) 2013-2019 Paul Steinhilber
 //  https://paulsteinhilber.de
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
