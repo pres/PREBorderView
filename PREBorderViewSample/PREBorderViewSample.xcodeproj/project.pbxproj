@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1F03542337A7BE005DBFEC /* PREBorderLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F03532337A7BE005DBFEC /* PREBorderLayer.m */; };
 		3DC8845D18AE790F006D695E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC8845C18AE790F006D695E /* Foundation.framework */; };
 		3DC8845F18AE790F006D695E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC8845E18AE790F006D695E /* CoreGraphics.framework */; };
 		3DC8846118AE790F006D695E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC8846018AE790F006D695E /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D1F03522337A7BE005DBFEC /* PREBorderLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PREBorderLayer.h; sourceTree = "<group>"; };
+		3D1F03532337A7BE005DBFEC /* PREBorderLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PREBorderLayer.m; sourceTree = "<group>"; };
 		3DC8845918AE790F006D695E /* PREBorderViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PREBorderViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC8845C18AE790F006D695E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DC8845E18AE790F006D695E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +88,8 @@
 		3DC8845018AE790F006D695E = {
 			isa = PBXGroup;
 			children = (
+				3D1F03522337A7BE005DBFEC /* PREBorderLayer.h */,
+				3D1F03532337A7BE005DBFEC /* PREBorderLayer.m */,
 				3DC8849118AE7F3F006D695E /* UIView+PREBorderView.h */,
 				3DC8849218AE7F3F006D695E /* UIView+PREBorderView.m */,
 				3DC8846218AE790F006D695E /* PREBorderViewSample */,
@@ -258,6 +263,7 @@
 				3DC8846D18AE790F006D695E /* PREAppDelegate.m in Sources */,
 				3DC8849318AE7F3F006D695E /* UIView+PREBorderView.m in Sources */,
 				3DC8847318AE790F006D695E /* PREBorderViewSampleViewController.m in Sources */,
+				3D1F03542337A7BE005DBFEC /* PREBorderLayer.m in Sources */,
 				3DC8846918AE790F006D695E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

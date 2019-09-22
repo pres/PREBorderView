@@ -24,6 +24,7 @@
 //
 
 #import "UIView+PREBorderView.h"
+#import "PREBorderLayer.h"
 
 @implementation UIView (PREBorderView)
 
@@ -95,7 +96,7 @@ static UIColor* pre_defaultBorderColor;
     // min lineweight is one device pixel
     lineWidth = MAX(self.devicePixelSize, lineWidth);
     
-    CALayer* border = [CALayer layer];
+    CALayer* border = [[PREBorderLayer alloc] initWithColor:color];
     CGRect frame;
     
     switch (position) {
@@ -228,7 +229,13 @@ static UIColor* pre_defaultBorderColor;
     for (NSNumber* pos in positions) {
         CALayer* border = [self borderAtPosition:pos.unsignedIntegerValue];
         if (border) {
-            UIColor* color = [UIColor colorWithCGColor:border.backgroundColor];
+            UIColor* color;
+            if ([border isKindOfClass:PREBorderLayer.class]) {
+                PREBorderLayer* borderLayer = (PREBorderLayer*)border;
+                color = borderLayer.pre_borderColor;
+            } else {
+                color = [UIColor colorWithCGColor:border.backgroundColor];
+            }
             CGFloat width;
             CGFloat margin;
             switch (pos.unsignedIntegerValue) {

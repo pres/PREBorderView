@@ -33,30 +33,33 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P98-DJ-Ows">
                                 <rect key="frame" x="20" y="111" width="185" height="169.5"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-pi-Bep">
                                 <rect key="frame" x="225" y="111" width="130" height="169.5"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzK-bR-PGG">
                                 <rect key="frame" x="20" y="293.5" width="185" height="170"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q50-uH-hYn">
                                 <rect key="frame" x="225" y="293.5" width="130" height="170"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z02-Ce-jMc">
                                 <rect key="frame" x="20" y="477.5" width="185" height="169.5"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlH-Hs-Gj7">
-                                <rect key="frame" x="225" y="477.5" width="130" height="169.5"/>
+                                <rect key="frame" x="265" y="477.5" width="50" height="169.5"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="MTF-Fl-zdF"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QzK-bR-PGG" firstAttribute="top" secondItem="P98-DJ-Ows" secondAttribute="bottom" constant="13" id="0HB-ad-P8M"/>
                             <constraint firstItem="q50-uH-hYn" firstAttribute="width" secondItem="2vc-41-2hN" secondAttribute="width" id="0i2-aU-eyA"/>
@@ -66,7 +69,6 @@
                             <constraint firstItem="z02-Ce-jMc" firstAttribute="centerX" secondItem="xhB-FG-VvC" secondAttribute="centerX" id="631-wF-5ms"/>
                             <constraint firstItem="q50-uH-hYn" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="8nn-js-9VG"/>
                             <constraint firstItem="RhJ-pi-Bep" firstAttribute="width" secondItem="2vc-41-2hN" secondAttribute="width" id="A29-Ss-6eY"/>
-                            <constraint firstItem="xlH-Hs-Gj7" firstAttribute="width" secondItem="2vc-41-2hN" secondAttribute="width" id="Bwc-zF-iNr"/>
                             <constraint firstItem="z02-Ce-jMc" firstAttribute="top" secondItem="QzK-bR-PGG" secondAttribute="bottom" constant="14" id="DTd-Zu-tCZ"/>
                             <constraint firstItem="xlH-Hs-Gj7" firstAttribute="centerY" secondItem="z02-Ce-jMc" secondAttribute="centerY" id="Gp1-qz-LMB"/>
                             <constraint firstItem="z02-Ce-jMc" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="IBH-b1-lB4"/>
@@ -101,6 +103,7 @@
                         <outlet property="sample6" destination="q50-uH-hYn" id="8Jc-Lu-L11"/>
                         <outlet property="sample7" destination="z02-Ce-jMc" id="0Az-TF-dj7"/>
                         <outlet property="sample8" destination="xlH-Hs-Gj7" id="BsY-oL-0ja"/>
+                        <outlet property="widthConstraint" destination="MTF-Fl-zdF" id="NRt-zs-HK4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

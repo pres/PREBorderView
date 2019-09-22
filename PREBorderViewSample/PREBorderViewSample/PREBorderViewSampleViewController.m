@@ -36,6 +36,8 @@
     IBOutlet UIView* sample6;
     IBOutlet UIView* sample7;
     IBOutlet UIView* sample8;
+    
+    IBOutlet NSLayoutConstraint* widthConstraint;
 }
 
 @end
@@ -50,8 +52,12 @@
     [sample2 addRetinaPixelBorderAtPosition:PREBorderPositionRight];
     [sample2 addRetinaPixelBorderAtPosition:PREBorderPositionTop];
     
-    [sample3 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
-    [sample4 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionBottom];
+    if (@available(iOS 13.0, *)) {
+        [sample3 addBorderWithColor:[UIColor separatorColor] andWidth:2 atPosition:PREBorderPositionTop];
+        [sample3 addBorderWithColor:[UIColor labelColor] andWidth:2 atPosition:PREBorderPositionBottom];
+    } else {
+        [sample3 addBorderWithColor:[UIColor blackColor] andWidth:2 atPosition:PREBorderPositionTop];
+    }
     
     [sample7 addBorderWithColor:[UIColor redColor] andWidth:5 withMargin:5 atPosition:PREBorderPositionTop];
     [sample7 addBorderWithColor:[UIColor greenColor] andWidth:10 withMargin:10 atPosition:PREBorderPositionBottom];
@@ -67,10 +73,17 @@
     
     [sample5 addBorderWithColor:[UIColor yellowColor] andWidth:10 atPosition:PREBorderPositionTop];
     [sample5 addBorderWithColor:[UIColor yellowColor] andWidth:10 atPosition:PREBorderPositionRight];
-    [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionBottom];
-    [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionLeft];
-    [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionTopOutside];
-    [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionRightOutside];
+    if (@available(iOS 13.0, *)) {
+        [sample5 addBorderWithColor:[UIColor labelColor] andWidth:10 atPosition:PREBorderPositionBottom];
+        [sample5 addBorderWithColor:[UIColor labelColor] andWidth:10 atPosition:PREBorderPositionLeft];
+        [sample5 addBorderWithColor:[UIColor labelColor] andWidth:10 atPosition:PREBorderPositionTopOutside];
+        [sample5 addBorderWithColor:[UIColor labelColor] andWidth:10 atPosition:PREBorderPositionRightOutside];
+    } else {
+        [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionBottom];
+        [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionLeft];
+        [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionTopOutside];
+        [sample5 addBorderWithColor:[UIColor blackColor] andWidth:10 atPosition:PREBorderPositionRightOutside];
+    }
     [sample5 addBorderWithColor:[UIColor yellowColor] andWidth:10 atPosition:PREBorderPositionBottomOutside];
     [sample5 addBorderWithColor:[UIColor yellowColor] andWidth:10 atPosition:PREBorderPositionLeftOutside];
 }
@@ -79,13 +92,16 @@
     [self.view layoutSubviewBorders];
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection*)previousTraitCollection {
+    [self.view layoutSubviewBorders];
+}
+
 #pragma mark -
 
 - (void)removeLine {
     [sample1 addRetinaPixelBorder];
     
-    [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 80 - 20, 50 - 10)];
-    [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130, 130)];
+    widthConstraint.constant = 130;
     
     [sample4 removeBorderAtPosition:PREBorderPositionTop];
     [sample4 removeBorderAtPosition:PREBorderPositionRight];
@@ -114,8 +130,7 @@
 - (void)addLine {
     [sample1 removeAllBorders];
     
-    [sample2 setFrame:CGRectMake(sample2.frame.origin.x, sample2.frame.origin.y, 100, 100)];
-    [sample5 setFrame:CGRectMake(sample5.frame.origin.x, sample5.frame.origin.y, 130 - 40, 130 - 20)];
+    widthConstraint.constant = 50;
     
     [sample4 removeBorderAtPosition:PREBorderPositionTopOutside];
     [sample4 removeBorderAtPosition:PREBorderPositionRightOutside];
