@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
+## [3.3.0](https://github.com/pres/PREBorderView/releases/tag/3.3.0) (2019-09-22)
+
+#### Updated
+* Improved support for iOS 13 Dark Mode: `layoutSubviewBorders` now not only layouts all borders but also updates the color to match the appearance (dark or light) of the current trait collection when using dynamic colors. `layoutSubviewBorders` could e.g. called in `-traitCollectionDidChange:`.
+
 ## [3.2.2](https://github.com/pres/PREBorderView/releases/tag/3.2.2) (2019-01-22)
 
 #### Fixes
