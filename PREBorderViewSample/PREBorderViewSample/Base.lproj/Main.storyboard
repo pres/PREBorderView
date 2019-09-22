@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,23 +12,19 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="PREBorderViewSampleViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FNO-13-hjl"/>
-                        <viewControllerLayoutGuide type="bottom" id="gY2-o5-7mX"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-FG-VvC">
-                                <rect key="frame" x="20" y="20" width="185" height="100"/>
+                                <rect key="frame" x="20" y="0.0" width="185" height="100"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gO7-dB-mLR"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-41-2hN">
-                                <rect key="frame" x="225" y="20" width="130" height="100"/>
+                                <rect key="frame" x="225" y="0.0" width="130" height="100"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EgU-vP-OTY"/>
@@ -37,27 +32,27 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P98-DJ-Ows">
-                                <rect key="frame" x="20" y="131" width="185" height="163"/>
+                                <rect key="frame" x="20" y="111" width="185" height="169.5"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-pi-Bep">
-                                <rect key="frame" x="225" y="131" width="130" height="163"/>
+                                <rect key="frame" x="225" y="111" width="130" height="169.5"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzK-bR-PGG">
-                                <rect key="frame" x="20" y="307" width="185" height="163"/>
+                                <rect key="frame" x="20" y="293.5" width="185" height="170"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q50-uH-hYn">
-                                <rect key="frame" x="225" y="307" width="130" height="163"/>
+                                <rect key="frame" x="225" y="293.5" width="130" height="170"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z02-Ce-jMc">
-                                <rect key="frame" x="20" y="484" width="185" height="163"/>
+                                <rect key="frame" x="20" y="477.5" width="185" height="169.5"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlH-Hs-Gj7">
-                                <rect key="frame" x="225" y="484" width="130" height="163"/>
+                                <rect key="frame" x="225" y="477.5" width="130" height="169.5"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -65,10 +60,9 @@
                         <constraints>
                             <constraint firstItem="QzK-bR-PGG" firstAttribute="top" secondItem="P98-DJ-Ows" secondAttribute="bottom" constant="13" id="0HB-ad-P8M"/>
                             <constraint firstItem="q50-uH-hYn" firstAttribute="width" secondItem="2vc-41-2hN" secondAttribute="width" id="0i2-aU-eyA"/>
-                            <constraint firstAttribute="trailing" secondItem="2vc-41-2hN" secondAttribute="trailing" constant="20" id="3ja-9l-9Om"/>
-                            <constraint firstItem="xhB-FG-VvC" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="4NV-4Q-mmg"/>
+                            <constraint firstItem="fJo-15-COk" firstAttribute="trailing" secondItem="2vc-41-2hN" secondAttribute="trailing" constant="20" id="3ja-9l-9Om"/>
                             <constraint firstItem="z02-Ce-jMc" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="4nO-wl-6gE"/>
-                            <constraint firstItem="xhB-FG-VvC" firstAttribute="top" secondItem="FNO-13-hjl" secondAttribute="bottom" id="5nG-WK-jUk"/>
+                            <constraint firstItem="xhB-FG-VvC" firstAttribute="top" secondItem="fJo-15-COk" secondAttribute="top" id="5nG-WK-jUk"/>
                             <constraint firstItem="z02-Ce-jMc" firstAttribute="centerX" secondItem="xhB-FG-VvC" secondAttribute="centerX" id="631-wF-5ms"/>
                             <constraint firstItem="q50-uH-hYn" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="8nn-js-9VG"/>
                             <constraint firstItem="RhJ-pi-Bep" firstAttribute="width" secondItem="2vc-41-2hN" secondAttribute="width" id="A29-Ss-6eY"/>
@@ -79,10 +73,10 @@
                             <constraint firstItem="QzK-bR-PGG" firstAttribute="centerX" secondItem="xhB-FG-VvC" secondAttribute="centerX" id="RXT-bq-gYC"/>
                             <constraint firstItem="z02-Ce-jMc" firstAttribute="width" secondItem="xhB-FG-VvC" secondAttribute="width" id="YHi-Rv-qCi"/>
                             <constraint firstItem="xlH-Hs-Gj7" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="aCn-GX-Fa1"/>
-                            <constraint firstItem="xhB-FG-VvC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="aNs-Rf-Uef"/>
+                            <constraint firstItem="xhB-FG-VvC" firstAttribute="leading" secondItem="fJo-15-COk" secondAttribute="leading" constant="20" id="aNs-Rf-Uef"/>
                             <constraint firstItem="RhJ-pi-Bep" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="gAj-YY-SHg"/>
                             <constraint firstItem="2vc-41-2hN" firstAttribute="top" secondItem="xhB-FG-VvC" secondAttribute="top" id="gMc-5E-e5q"/>
-                            <constraint firstItem="gY2-o5-7mX" firstAttribute="top" secondItem="z02-Ce-jMc" secondAttribute="bottom" constant="20" id="gdh-qd-jVp"/>
+                            <constraint firstItem="fJo-15-COk" firstAttribute="bottom" secondItem="z02-Ce-jMc" secondAttribute="bottom" constant="20" id="gdh-qd-jVp"/>
                             <constraint firstItem="RhJ-pi-Bep" firstAttribute="centerX" secondItem="2vc-41-2hN" secondAttribute="centerX" id="iLn-xm-lRt"/>
                             <constraint firstItem="P98-DJ-Ows" firstAttribute="width" secondItem="xhB-FG-VvC" secondAttribute="width" id="nHy-87-1di"/>
                             <constraint firstItem="2vc-41-2hN" firstAttribute="leading" secondItem="xhB-FG-VvC" secondAttribute="trailing" constant="20" id="nQQ-6z-XGC"/>
@@ -96,6 +90,7 @@
                             <constraint firstItem="q50-uH-hYn" firstAttribute="centerY" secondItem="QzK-bR-PGG" secondAttribute="centerY" id="zTf-qA-DRM"/>
                             <constraint firstItem="QzK-bR-PGG" firstAttribute="height" secondItem="P98-DJ-Ows" secondAttribute="height" id="zfC-zO-t6g"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fJo-15-COk"/>
                     </view>
                     <connections>
                         <outlet property="sample1" destination="xhB-FG-VvC" id="mqj-yy-iWF"/>
@@ -110,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="86"/>
+            <point key="canvasLocation" x="278.26086956521743" y="57.589285714285708"/>
         </scene>
     </scenes>
 </document>
