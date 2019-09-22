@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Paul Steinhilber" => "me@paulsteinhilber.de" }
   s.source       = { :git => "https://github.com/pres/PREBorderView.git", :tag => s.version.to_s }
-  s.source_files = '{PREBorderLayer,UIView+PREBorderView}.{h,m}'
+  s.source_files = 'PREBorderView/{PREBorderLayer,UIView+PREBorderView}.{h,m}'
   s.platform     = :ios, '6.0'
   s.requires_arc = true
 end
