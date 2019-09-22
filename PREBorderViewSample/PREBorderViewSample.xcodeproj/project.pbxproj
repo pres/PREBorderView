@@ -202,7 +202,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PRE;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Paul Steinhilber";
 				TargetAttributes = {
 					3DC8847918AE790F006D695E = {
@@ -212,7 +212,7 @@
 			};
 			buildConfigurationList = 3DC8845418AE790F006D695E /* Build configuration list for PBXProject "PREBorderViewSample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
