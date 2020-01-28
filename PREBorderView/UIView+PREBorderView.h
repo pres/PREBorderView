@@ -25,6 +25,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, PREBorderPosition) {
     PREBorderPositionTop,
     PREBorderPositionBottom,
@@ -126,7 +128,7 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 /**
  *  Returns the layer of the border at the specified position
  */
-- (CALayer*)borderAtPosition:(PREBorderPosition)position;
+- (nullable CALayer*)borderAtPosition:(PREBorderPosition)position;
 
 /**
  *  Remove the border at the specified side of the view.
@@ -153,3 +155,5 @@ typedef NS_ENUM(NSUInteger, PREBorderPosition) {
 - (void)layoutSubviewBorders;
 
 @end
+
+NS_ASSUME_NONNULL_END

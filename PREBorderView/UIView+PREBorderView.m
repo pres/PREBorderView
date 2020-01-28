@@ -41,7 +41,7 @@ static UIColor* pre_defaultBorderColor;
         if ([self respondsToSelector:@selector(tintColor)]) {
             return self.tintColor;
         } else {
-            return [UIColor blueColor];
+            return UIColor.blueColor;
         }
     } else {
         return pre_defaultBorderColor;
