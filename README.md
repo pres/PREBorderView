@@ -13,12 +13,12 @@ A very simple Objective-C `UIView` category for specifying single-sided borders.
 
 ### Using CocoaPods
 
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PREBorderView in your projects.
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like `PREBorderView` in your projects.
 
 #### Podfile
 
 ```ruby
-pod 'PREBorderView', "~> 3.2"
+pod 'PREBorderView', "~> 3.3"
 ```
 
 ### Manual
