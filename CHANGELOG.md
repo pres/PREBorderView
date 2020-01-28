@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 --- 
 
+## [3.3.1](https://github.com/pres/PREBorderView/releases/tag/3.3.1) (2020-01-28)
+
+#### Updated
+* Add missing nullability annotations.
+
 ## [3.3.0](https://github.com/pres/PREBorderView/releases/tag/3.3.0) (2019-09-22)
 
 #### Updated
